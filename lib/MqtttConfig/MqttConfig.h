@@ -3,10 +3,11 @@
 #include <Arduino.h>
 
 struct MqttTopics {
-    String otp;
     String action;
     String status;
     String heartbeat;
+    String qr;
+    String qrResult;
 };
 
 struct MqttSettings {
@@ -18,10 +19,11 @@ struct MqttSettings {
     MqttTopics topics;
 
     void updateTopics() {
-        topics.otp       = "backend/cabinet/" + roomId + "/otp";
         topics.action    = "backend/cabinet/" + roomId + "/action";
         topics.status    = "iot/cabinet/" + roomId + "/status";
         topics.heartbeat = "iot/cabinet/" + roomId + "/heartbeat";
+        topics.qr        = "backend/cabinet/" + roomId + "/qr";
+        topics.qrResult  = "iot/cabinet/" + roomId + "/qr-result";
     }
 };
 

@@ -7,36 +7,42 @@
 #include <lvgl.h>
 #include "WifiConfig.h"
 #include "MqttConfig.h"
+#include "QrAccess.h"
 
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 160
+#define SCREEN_WIDTH 160
+#define SCREEN_HEIGHT 128
 #define DRAW_BUFFER_SIZE (SCREEN_WIDTH * SCREEN_HEIGHT / 10 * 2)
 
-#define SERVO_PIN 37
-#define DOOR_BUTTON 42 // button :))
+#define LATCH_PIN 4
+#define BUZZER_PIN 6
+#define CLOSE_BUTTON_PIN 5
 #define LED_PIN 35
 #define WIFI_CONFIG_BUTTON_PIN 15
 
-#define SERVO_CHANNEL 4
-#define SERVO_LOCKED_ANGLE 90
-#define SERVO_UNLOCKED_ANGLE 180
+// Electrical latch driver: HIGH energizes/unlocks, LOW de-energizes/locks.
+#define LATCH_ON HIGH
+#define LATCH_OFF LOW
 
 const unsigned long DOOR_DEBOUNCE_DELAY_MS = 50;
+const unsigned long LATCH_PULSE_MS = 1500;
 const unsigned long HEARTBEAT_INTERVAL_MS = 15000;
 const unsigned long MQTT_RECONNECT_INTERVAL_MS = 5000;
-const unsigned long OTP_DISPLAY_DURATION_MS = 180000;
 
 unsigned long wifiButtonPressedAt = 0;
 bool wifiButtonHeld = false;
+unsigned long latchStartedAt = 0;
+bool latchPulseActive = false;
+bool qrScanBeepPending = false;
 
 TFT_eSPI tft;
 WiFiClientSecure mqttTransport;
-MQTTPubSub::PubSubClient<256> mqttClient;
+// QR actions carry the equipment snapshot; 256 bytes truncates these packets.
+MQTTPubSub::PubSubClient<8192> mqttClient;
 
 uint8_t drawBuffer[DRAW_BUFFER_SIZE];
 lv_obj_t *lb_header;
 lv_obj_t *lb_status;
-lv_obj_t *lb_otp;
+lv_obj_t *lb_detail;
 lv_obj_t *lb_network;
 
 struct CabinetState
@@ -62,17 +68,6 @@ uint8_t lastRawDoorState = LOW;
 unsigned long lastDoorDebounceTime = 0;
 unsigned long lastHeartbeatTime = 0;
 unsigned long lastMqttReconnectAttempt = 0;
-unsigned long otpReceivedTime = 0;
-
-uint32_t angleToDuty(uint8_t angle)
-{
-    return map(angle, 0, 180, 410, 2048);
-}
-
-void setServoAngle(uint8_t angle)
-{
-    ledcWrite(SERVO_CHANNEL, angleToDuty(angle));
-}
 
 void displayFlush(lv_display_t *display, const lv_area_t *area, uint8_t *pixelMap)
 {
@@ -119,12 +114,12 @@ void initializeScreen()
     lv_obj_align(lb_status, LV_ALIGN_CENTER, 0, -8);
     lv_label_set_text(lb_status, "Dang khoi dong...");
 
-    lb_otp = lv_label_create(lv_screen_active());
-    lv_obj_set_width(lb_otp, SCREEN_WIDTH);
-    lv_obj_set_style_text_color(lb_otp, lv_color_hex(0xFFFF), LV_PART_MAIN);
-    lv_obj_set_style_text_align(lb_otp, LV_TEXT_ALIGN_CENTER, 0);
-    lv_obj_align(lb_otp, LV_ALIGN_CENTER, 0, 20);
-    lv_label_set_text(lb_otp, "");
+    lb_detail = lv_label_create(lv_screen_active());
+    lv_obj_set_width(lb_detail, SCREEN_WIDTH);
+    lv_obj_set_style_text_color(lb_detail, lv_color_hex(0xFFFF), LV_PART_MAIN);
+    lv_obj_set_style_text_align(lb_detail, LV_TEXT_ALIGN_CENTER, 0);
+    lv_obj_align(lb_detail, LV_ALIGN_CENTER, 0, 20);
+    lv_label_set_text(lb_detail, "");
 
     lb_network = lv_label_create(lv_screen_active());
     lv_obj_set_width(lb_network, SCREEN_WIDTH);
@@ -143,18 +138,6 @@ String readMessageId(JsonVariantConst value)
     if (value.is<long>())
         return String(value.as<long>());
     return "";
-}
-
-bool isValidOtp(const String &otp)
-{
-    if (otp.length() != 6)
-        return false;
-    for (size_t index = 0; index < otp.length(); index++)
-    {
-        if (!isDigit(otp[index]))
-            return false;
-    }
-    return true;
 }
 
 String createHeartbeatPayload(bool isOnline)
@@ -221,36 +204,40 @@ void executeUnlock(const String &sessionId = "")
         cabinetState.currentSessionId = sessionId;
 
     cabinetState.isUnlocked = true;
-    otpReceivedTime = 0;
 
     digitalWrite(LED_PIN, HIGH);
-    setServoAngle(SERVO_UNLOCKED_ANGLE);
+    digitalWrite(LATCH_PIN, LATCH_ON);
+    latchStartedAt = millis();
+    latchPulseActive = true;
+    tone(BUZZER_PIN, 1000, 1500);
+
+   
 
     lv_label_set_text(lb_status, "CUA DANG MO");
-    lv_label_set_text(lb_otp, "");
+    lv_label_set_text(lb_detail, "");
 
     publishStatus();
-    Serial.println(">> [SERVO] DA MO CHOT THANH CONG!");
+    Serial.println(">> [LATCH] DA BAT KHOA DIEN DE MO!");
 }
 
 void executeLock()
 {
     cabinetState.isUnlocked = false;
-    otpReceivedTime = 0;
 
     digitalWrite(LED_PIN, LOW);
-    setServoAngle(SERVO_LOCKED_ANGLE);
+    digitalWrite(LATCH_PIN, LATCH_OFF);
+    latchPulseActive = false;
 
     lv_label_set_text(lb_status, "DA KHOA");
-    lv_label_set_text(lb_otp, "");
+    lv_label_set_text(lb_detail, "");
 
     publishStatus();
-    Serial.println(">> [SERVO] DA KHOA CHOT THANH CONG!");
+    Serial.println(">> [LATCH] DA TAT KHOA DIEN!");
 }
 
 void handleDoorSensor()
 {
-    uint8_t currentRawState = digitalRead(DOOR_BUTTON);
+    uint8_t currentRawState = digitalRead(CLOSE_BUTTON_PIN);
 
     if (currentRawState != lastRawDoorState)
         lastDoorDebounceTime = millis();
@@ -259,7 +246,7 @@ void handleDoorSensor()
     {
         stableDoorState = currentRawState;
 
-        if (stableDoorState == HIGH && cabinetState.isUnlocked)
+        if (stableDoorState == HIGH && (cabinetState.isUnlocked || qrNeedsDoorClose()))
         {
             Serial.println(">> [SENSOR] Da dong cua tu.");
             pendingAction = ACTION_LOCK;
@@ -267,43 +254,6 @@ void handleDoorSensor()
     }
 
     lastRawDoorState = currentRawState;
-}
-
-void handleOtpMessage(const String &payload, const size_t size)
-{
-    (void)size;
-    Serial.println("[MQTT Recv -> OTP] " + payload);
-
-    JsonDocument document;
-    DeserializationError error = deserializeJson(document, payload);
-
-    if (error)
-    {
-        Serial.println("[MQTT] Payload OTP khong phai JSON hop le.");
-        return;
-    }
-
-    String targetRoom = document["room"] | "";
-    if (targetRoom != activeMqttConfig.roomId)
-    {
-        Serial.println("[MQTT] Bo qua OTP khong thuoc tu nay.");
-        return;
-    }
-
-    String otp = document["otp"] | "";
-    if (!isValidOtp(otp))
-    {
-        Serial.println("[MQTT] OTP khong hop le.");
-        return;
-    }
-
-    cabinetState.currentSessionId = readMessageId(document["id"]);
-    otpReceivedTime = millis();
-
-    lv_label_set_text(lb_status, "MA OTP:");
-    lv_label_set_text_fmt(lb_otp, "%s", otp.c_str());
-
-    Serial.println(">> [OTP HIEN THI] Ma: " + otp);
 }
 
 void handleActionMessage(const String &payload, const size_t size)
@@ -326,6 +276,19 @@ void handleActionMessage(const String &payload, const size_t size)
         Serial.println("[MQTT] Bo qua action khong thuoc tu nay.");
         return;
     }
+
+    if (String(document["action"] | "") == "qr_scanned")
+    {
+        if (acceptQrScanFeedback(document))
+        {
+            qrScanBeepPending = true;
+            Serial.println("[BUZZER] Valid QR scan queued.");
+        }
+        else Serial.println("[BUZZER] QR scan ignored: stale, mismatched or duplicate.");
+        return;
+    }
+    if (handleQrAction(document, cabinetState.isUnlocked, pendingAction != ACTION_NONE)) return;
+    if (qrOwnsCabinet()) return;
 
     String action = document["action"] | "";
     String sessionId = readMessageId(document["id"]);
@@ -350,12 +313,12 @@ void handleActionMessage(const String &payload, const size_t size)
 
 void subscribeToMqttTopics()
 {
-    bool otpSubscribed = mqttClient.subscribe(activeMqttConfig.topics.otp.c_str(), 1, handleOtpMessage);
     bool actionSubscribed = mqttClient.subscribe(activeMqttConfig.topics.action.c_str(), 1, handleActionMessage);
+    bool qrSubscribed = mqttClient.subscribe(activeMqttConfig.topics.qr.c_str(), 1, handleQrDisplay);
 
-    if (otpSubscribed && actionSubscribed)
+    if (actionSubscribed && qrSubscribed)
     {
-        Serial.println("[MQTT] Da subscribe OTP va action.");
+        Serial.println("[MQTT] Da subscribe QR va action.");
     }
     else
     {
@@ -404,18 +367,9 @@ void connectMqtt()
     subscribeToMqttTopics();
     publishHeartbeat();
     publishStatus();
+    replayQrResults();
 
     Serial.println("THANH CONG!");
-}
-
-void handleOtpExpiration()
-{
-    if (otpReceivedTime == 0 || millis() - otpReceivedTime < OTP_DISPLAY_DURATION_MS)
-        return;
-
-    otpReceivedTime = 0;
-    lv_label_set_text(lb_status, "MA OTP HET HAN");
-    lv_label_set_text(lb_otp, "");
 }
 
 static uint32_t get_lv_tick()
@@ -433,24 +387,29 @@ void setup()
     initMqttConfig();
 
     pinMode(WIFI_CONFIG_BUTTON_PIN, INPUT_PULLDOWN);
-    pinMode(DOOR_BUTTON, INPUT_PULLDOWN);
+    pinMode(CLOSE_BUTTON_PIN, INPUT_PULLDOWN);
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, LOW);
+    pinMode(BUZZER_PIN, OUTPUT);
+    digitalWrite(BUZZER_PIN, LOW);
 
-    ledcSetup(SERVO_CHANNEL, 50, 14);
-    ledcAttachPin(SERVO_PIN, SERVO_CHANNEL);
-    setServoAngle(SERVO_LOCKED_ANGLE);
+    // Set the output latch LOW before enabling the pin as an output.
+    digitalWrite(LATCH_PIN, LATCH_OFF);
+    pinMode(LATCH_PIN, OUTPUT);
 
     tft.init();
-    tft.setRotation(0);
+    tft.setRotation(1);
     tft.fillScreen(TFT_BLACK);
 
     lv_init();
     lv_tick_set_cb(get_lv_tick);
     initializeScreen();
+    initializeQrAccess([](const String &payload) {
+        return mqttClient.isConnected() && mqttClient.publish(activeMqttConfig.topics.qrResult.c_str(), payload, false, 1);
+    });
 
     lv_label_set_text(lb_status, "CAU HINH WIFI");
-    lv_label_set_text(lb_otp, "ClassHub-Setup\nclasshub123");
+    lv_label_set_text(lb_detail, "ClassHub-Setup\nclasshub123");
     lv_label_set_text(lb_network, "192.168.4.1");
     lv_timer_handler();
 
@@ -463,7 +422,7 @@ void setup()
     }
 
     lv_label_set_text(lb_status, "WIFI DA KET NOI");
-    lv_label_set_text(lb_otp, "");
+    lv_label_set_text(lb_detail, "");
     lv_label_set_text(lb_network, "DANG NOI MQTT");
     lv_obj_invalidate(lv_screen_active());
     lv_refr_now(nullptr);
@@ -491,7 +450,7 @@ void loop()
             mqttTransport.stop();
 
             lv_label_set_text(lb_status, "CAU HINH WIFI");
-            lv_label_set_text(lb_otp, "ClassHub-Setup\nclasshub123");
+            lv_label_set_text(lb_detail, "ClassHub-Setup\nclasshub123");
             lv_label_set_text(lb_network, "192.168.4.1");
             lv_timer_handler();
 
@@ -522,6 +481,13 @@ void loop()
         }
     }
 
+    if (qrScanBeepPending)
+    {
+        qrScanBeepPending = false;
+        tone(BUZZER_PIN, 1000, 500);
+        Serial.println("[BUZZER] Scan tone: GPIO 7, 1000 Hz, 500 ms.");
+    }
+
     if (pendingAction == ACTION_OPEN)
     {
         String sessionId = pendingSessionId;
@@ -533,10 +499,24 @@ void loop()
     {
         pendingAction = ACTION_NONE;
         executeLock();
+        qrLockExecuted();
+    }
+
+    String qrSessionId;
+    if (pendingAction == ACTION_NONE && qrUnlockPending(qrSessionId))
+    {
+        executeUnlock(qrSessionId);
+        qrUnlockExecuted();
+    }
+
+    if (latchPulseActive && millis() - latchStartedAt >= LATCH_PULSE_MS)
+    {
+        digitalWrite(LATCH_PIN, LATCH_OFF);
+        latchPulseActive = false;
     }
 
     handleDoorSensor();
-    handleOtpExpiration();
+    tickQrAccess();
 
     if (mqttClient.isConnected() && millis() - lastHeartbeatTime >= HEARTBEAT_INTERVAL_MS)
     {
