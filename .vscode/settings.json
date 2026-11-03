@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/.pio/build/esp32-s3-devkitc-1/compile_commands.json",
+    "terminal.integrated.env.windows": {
+        "PLATFORMIO_RUN_JOBS": "1"
+    }
+}

@@ -1,0 +1,1282 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xde4
+load:0x403cb700,len:0x2f58
+entry 0x403c88fc
+I (24) boot: ESP-IDF 6.1.0 2nd stage bootloader
+I (25) boot: compile time Oct 17 2026 19:52:12
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.3
+I (31) boot.esp32s3: Boot SPI Speed : 80MHz
+I (35) boot.esp32s3: SPI Mode       : DIO
+I (39) boot.esp32s3: SPI Flash Size : 8MB
+I (43) boot: Enabling RNG early entropy source...
+I (47) boot: Partition Table:
+I (50) boot: ## Label            Usage          Type ST Offset   Length
+I (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (69) boot:  2 factory          factory app      00 00 00010000 00100000
+I (76) boot: End of partition table
+I (79) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=10c18h ( 68632) map
+I (99) esp_image: segment 1: paddr=00020c40 vaddr=3fc91500 size=059ech ( 23020) load
+I (104) esp_image: segment 2: paddr=00026634 vaddr=40374000 size=099e4h ( 39396) load
+I (113) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=2a1e8h (172520) map
+I (145) esp_image: segment 4: paddr=0005a210 vaddr=4037d9e4 size=03ab8h ( 15032) load
+I (149) esp_image: segment 5: paddr=0005dcd0 vaddr=50000000 size=00024h (    36) load
+I (156) boot: Loaded app from partition at offset 0x10000
+I (156) boot: Disabling RNG early entropy source...
+I (170) cpu_start: Multicore app
+I (179) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (180) cpu_start: Pro cpu start user code
+I (180) cpu_start: cpu freq: 160000000 Hz
+I (181) app_init: Application information:
+I (185) app_init: Project name:     OV7670
+I (189) app_init: App version:      1
+I (192) app_init: Compile time:     Oct 17 2026 19:47:44
+I (197) app_init: ELF file SHA256:  b80f49187...
+I (202) app_init: ESP-IDF:          6.1.0
+I (205) efuse_init: Min chip rev:     v0.0
+I (209) efuse_init: Max chip rev:     v0.99 
+I (213) efuse_init: Chip rev:         v0.2
+I (217) heap_init: Initializing. RAM available for dynamic allocation:
+I (223) heap_init: At 3FC98420 len 000512F0 (324 KiB): RAM
+I (228) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (234) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (239) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (245) spi_flash: detected chip: boya
+I (248) spi_flash: flash io: dio
+W (250) spi_flash: Detected size(16384k) larger than the size in the binary image header(8192k). Using the size in the binary image header.
+I (263) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (269) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (276) main_task: Started on CPU0
+I (296) main_task: Calling app_main()
+I (296) SCCB_ONLY: SCCB diagnostics then signals/capture: XCLK=10000000 Hz GPIO11, SDA=1 SCL=2
+I (296) SCCB_ONLY: PWDN/RESET are not controlled; verify module PWDN=LOW, RESET=HIGH
+I (606) SCCB_ONLY: ========== SCCB 100000 Hz ==========
+I (606) SCCB_ONLY: PID STOP_START reg=0x0A value=0x76
+I (606) SCCB_ONLY: VER STOP_START reg=0x0B value=0x73
+I (606) SCCB_ONLY: MIDL STOP_START reg=0x1C value=0x7F
+I (606) SCCB_ONLY: MIDH STOP_START reg=0x1D value=0xA2
+I (1616) SCCB_ONLY: ID_RESULT hz=100000 mode=STOP_START reads=400 errors=0 mismatches=0 => PASS
+I (1616) SCCB_ONLY: COM17 original STOP_START reg=0x42 value=0x00
+I (1616) SCCB_ONLY: COM17 confirm STOP_START reg=0x42 value=0x00
+I (1616) SCCB_ONLY: TEST_WRITE reg=0x42 value=0x08 result=ESP_OK (0x0)
+I (1646) SCCB_ONLY: COM17 after toggle STOP_START reg=0x42 value=0x08
+I (1646) SCCB_ONLY: RESTORE reg=0x42 value=0x00 result=ESP_OK (0x0)
+I (1666) SCCB_ONLY: COM17 after restore STOP_START reg=0x42 value=0x00
+I (1666) SCCB_ONLY: WRITE_RESULT mode=STOP_START toggle=PASS restore=PASS => PASS
+I (1666) SCCB_ONLY: Raw registers WITHOUT camera initialization; no RGB565/QQVGA comparison
+I (1676) SCCB_ONLY: RAW STOP_START reg=0x12 value=0x04
+I (1676) SCCB_ONLY: RAW STOP_START reg=0x11 value=0x03
+I (1686) SCCB_ONLY: RAW STOP_START reg=0x0C value=0x04
+I (1686) SCCB_ONLY: RAW STOP_START reg=0x3E value=0x1A
+I (1696) SCCB_ONLY: RAW STOP_START reg=0x40 value=0xD0
+I (1696) SCCB_ONLY: RAW STOP_START reg=0x72 value=0x22
+I (1706) SCCB_ONLY: RAW STOP_START reg=0x73 value=0xF2
+I (1706) SCCB_ONLY: RAW STOP_START reg=0x17 value=0x13
+I (1716) SCCB_ONLY: RAW STOP_START reg=0x18 value=0x01
+I (1716) SCCB_ONLY: RAW STOP_START reg=0x32 value=0x3E
+I (1726) SCCB_ONLY: RAW STOP_START reg=0x19 value=0x03
+I (1726) SCCB_ONLY: RAW STOP_START reg=0x1A value=0x7B
+I (1736) SCCB_ONLY: RAW STOP_START reg=0x03 value=0x00
+I (1736) SCCB_ONLY: SELECT COM17 baseline STOP_START reg=0x42 value=0x00
+I (1746) SCCB_ONLY: Selection test: 8 rounds, forward/reverse with rotating start; read-only
+I (1756) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0A]=0x76 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (1766) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0B]=0x73 target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (1766) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1C]=0x7F target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (1776) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1D]=0xA2 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (1786) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0A]=0x76 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (1796) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (1806) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1C]=0x7F target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (1816) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (1826) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0A]=0x76 target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (1836) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (1846) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1C]=0x7F target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (1856) SCCB_ONLY: SELECT round=1 order=FWD ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (1866) SCCB_ONLY: SELECT round=1 order=FWD ID[0x0A]=0x76 target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (1876) SCCB_ONLY: SELECT round=2 order=REV ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (1886) SCCB_ONLY: SELECT round=2 order=REV ID[0x1C]=0x7F target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (1896) SCCB_ONLY: SELECT round=2 order=REV ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (1896) SCCB_ONLY: SELECT round=2 order=REV ID[0x0A]=0x76 target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (1906) SCCB_ONLY: SELECT round=2 order=REV ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (1916) SCCB_ONLY: SELECT round=2 order=REV ID[0x1C]=0x7F target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (1926) SCCB_ONLY: SELECT round=2 order=REV ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (1936) SCCB_ONLY: SELECT round=2 order=REV ID[0x0A]=0x76 target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (1946) SCCB_ONLY: SELECT round=2 order=REV ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (1956) SCCB_ONLY: SELECT round=2 order=REV ID[0x1C]=0x7F target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (1966) SCCB_ONLY: SELECT round=2 order=REV ID[0x1D]=0xA2 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (1976) SCCB_ONLY: SELECT round=2 order=REV ID[0x0A]=0x76 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (1986) SCCB_ONLY: SELECT round=2 order=REV ID[0x0B]=0x73 target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2006) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1C]=0x7F target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2006) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1D]=0xA2 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2016) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0A]=0x76 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2026) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2036) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1C]=0x7F target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2036) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2046) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0A]=0x76 target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2056) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2066) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1C]=0x7F target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2076) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2086) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0A]=0x76 target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2096) SCCB_ONLY: SELECT round=3 order=FWD ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2106) SCCB_ONLY: SELECT round=3 order=FWD ID[0x1C]=0x7F target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2126) SCCB_ONLY: SELECT round=4 order=REV ID[0x1D]=0xA2 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2126) SCCB_ONLY: SELECT round=4 order=REV ID[0x0A]=0x76 target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2136) SCCB_ONLY: SELECT round=4 order=REV ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2146) SCCB_ONLY: SELECT round=4 order=REV ID[0x1C]=0x7F target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2156) SCCB_ONLY: SELECT round=4 order=REV ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2166) SCCB_ONLY: SELECT round=4 order=REV ID[0x0A]=0x76 target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2166) SCCB_ONLY: SELECT round=4 order=REV ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2176) SCCB_ONLY: SELECT round=4 order=REV ID[0x1C]=0x7F target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2186) SCCB_ONLY: SELECT round=4 order=REV ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2196) SCCB_ONLY: SELECT round=4 order=REV ID[0x0A]=0x76 target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2206) SCCB_ONLY: SELECT round=4 order=REV ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2216) SCCB_ONLY: SELECT round=4 order=REV ID[0x1C]=0x7F target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2226) SCCB_ONLY: SELECT round=4 order=REV ID[0x1D]=0xA2 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2246) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0A]=0x76 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2246) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2256) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1C]=0x7F target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2266) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2276) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0A]=0x76 target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2286) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2296) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1C]=0x7F target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2296) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2306) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0A]=0x76 target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2316) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2326) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1C]=0x7F target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2336) SCCB_ONLY: SELECT round=5 order=FWD ID[0x1D]=0xA2 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2346) SCCB_ONLY: SELECT round=5 order=FWD ID[0x0A]=0x76 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2366) SCCB_ONLY: SELECT round=6 order=REV ID[0x0B]=0x73 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2366) SCCB_ONLY: SELECT round=6 order=REV ID[0x1C]=0x7F target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2376) SCCB_ONLY: SELECT round=6 order=REV ID[0x1D]=0xA2 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2386) SCCB_ONLY: SELECT round=6 order=REV ID[0x0A]=0x76 target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2396) SCCB_ONLY: SELECT round=6 order=REV ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2406) SCCB_ONLY: SELECT round=6 order=REV ID[0x1C]=0x7F target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2416) SCCB_ONLY: SELECT round=6 order=REV ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2426) SCCB_ONLY: SELECT round=6 order=REV ID[0x0A]=0x76 target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2436) SCCB_ONLY: SELECT round=6 order=REV ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2436) SCCB_ONLY: SELECT round=6 order=REV ID[0x1C]=0x7F target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2446) SCCB_ONLY: SELECT round=6 order=REV ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2456) SCCB_ONLY: SELECT round=6 order=REV ID[0x0A]=0x76 target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2466) SCCB_ONLY: SELECT round=6 order=REV ID[0x0B]=0x73 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2486) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1C]=0x7F target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2486) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2496) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0A]=0x76 target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2506) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2516) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1C]=0x7F target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2526) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2536) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0A]=0x76 target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2546) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2556) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1C]=0x7F target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2566) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1D]=0xA2 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2566) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0A]=0x76 target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2576) SCCB_ONLY: SELECT round=7 order=FWD ID[0x0B]=0x73 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2586) SCCB_ONLY: SELECT round=7 order=FWD ID[0x1C]=0x7F target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2606) SCCB_ONLY: SELECT round=8 order=REV ID[0x1D]=0xA2 target[0x73]=0xF2 COM17=0x00 target_again=0xF2
+I (2606) SCCB_ONLY: SELECT round=8 order=REV ID[0x0A]=0x76 target[0x72]=0x22 COM17=0x00 target_again=0x22
+I (2616) SCCB_ONLY: SELECT round=8 order=REV ID[0x0B]=0x73 target[0x40]=0xD0 COM17=0x00 target_again=0xD0
+I (2626) SCCB_ONLY: SELECT round=8 order=REV ID[0x1C]=0x7F target[0x3E]=0x1A COM17=0x00 target_again=0x1A
+I (2636) SCCB_ONLY: SELECT round=8 order=REV ID[0x1D]=0xA2 target[0x0C]=0x04 COM17=0x00 target_again=0x04
+I (2646) SCCB_ONLY: SELECT round=8 order=REV ID[0x0A]=0x76 target[0x11]=0x03 COM17=0x00 target_again=0x03
+I (2656) SCCB_ONLY: SELECT round=8 order=REV ID[0x0B]=0x73 target[0x12]=0x04 COM17=0x00 target_again=0x04
+I (2666) SCCB_ONLY: SELECT round=8 order=REV ID[0x1C]=0x7F target[0x03]=0x00 COM17=0x00 target_again=0x00
+I (2676) SCCB_ONLY: SELECT round=8 order=REV ID[0x1D]=0xA2 target[0x1A]=0x7B COM17=0x00 target_again=0x7B
+I (2686) SCCB_ONLY: SELECT round=8 order=REV ID[0x0A]=0x76 target[0x19]=0x03 COM17=0x00 target_again=0x03
+I (2696) SCCB_ONLY: SELECT round=8 order=REV ID[0x0B]=0x73 target[0x32]=0x3E COM17=0x00 target_again=0x3E
+I (2696) SCCB_ONLY: SELECT round=8 order=REV ID[0x1C]=0x7F target[0x18]=0x01 COM17=0x00 target_again=0x01
+I (2706) SCCB_ONLY: SELECT round=8 order=REV ID[0x1D]=0xA2 target[0x17]=0x13 COM17=0x00 target_again=0x13
+I (2726) SCCB_ONLY: SELECT_RESULT errors=0 id_mismatches=0 com17_changes=0 target_changes=0 pair_mismatches=0 target_A1=0/208
+I (2726) SCCB_ONLY: SELECT_RESULT checks read consistency only; stable target values do not prove correct register contents
+I (2736) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x0B value=0x73
+I (2746) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x0B value=0x73
+I (2756) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x0C value=0x04
+I (2756) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x0C value=0x04
+I (2766) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x0D value=0x40
+I (2766) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x0D value=0x40
+I (2776) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x0A value=0x76
+I (2776) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x0A value=0x76
+I (2786) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x3E value=0x1A
+I (2796) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x3E value=0x1A
+I (2796) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x40 value=0xD0
+I (2806) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x40 value=0xD0
+I (2816) SCCB_ONLY: SUSPECT baseline STOP_START reg=0x42 value=0x00
+I (2816) SCCB_ONLY: SUSPECT confirm STOP_START reg=0x42 value=0x00
+I (2826) SCCB_ONLY: SUSPECT COM3[6] original=0x04 target=0x44 mask=0x40
+I (2826) SCCB_ONLY: SUSPECT_WRITE reg=0x0C value=0x44 result=ESP_OK (0x0)
+I (2856) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0B value=0x73
+I (2856) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0C value=0x44
+I (2856) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0D value=0x40
+I (2856) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0A value=0x76
+I (2866) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x3E value=0x1A
+I (2876) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x40 value=0xD0
+I (2876) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x42 value=0x00
+I (2896) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x42 value=0x00
+I (2896) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x40 value=0xD0
+I (2896) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x3E value=0x1A
+I (2906) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0A value=0x76
+I (2916) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0D value=0x40
+I (2916) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0C value=0x44
+I (2926) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0B value=0x73
+I (2936) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0B value=0x73
+I (2936) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0C value=0x44
+I (2946) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0D value=0x40
+I (2946) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x0A value=0x76
+I (2956) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x3E value=0x1A
+I (2966) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x40 value=0xD0
+I (2966) SCCB_ONLY: SUSPECT after toggle STOP_START reg=0x42 value=0x00
+I (2986) SCCB_ONLY: SUSPECT_RESTORE reg=0x0C value=0x04 result=ESP_OK (0x0)
+I (3006) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0B value=0x73
+I (3006) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0C value=0x04
+I (3006) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0D value=0x40
+I (3006) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0A value=0x76
+I (3016) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x3E value=0x1A
+I (3026) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x40 value=0xD0
+I (3026) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x42 value=0x00
+I (3046) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0B value=0x73
+I (3046) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0C value=0x04
+I (3046) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0D value=0x40
+I (3056) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0A value=0x76
+I (3066) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x3E value=0x1A
+I (3066) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x40 value=0xD0
+I (3076) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x42 value=0x00
+I (3086) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0B value=0x73
+I (3086) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0C value=0x04
+I (3096) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0D value=0x40
+I (3096) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x0A value=0x76
+I (3106) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x3E value=0x1A
+I (3116) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x40 value=0xD0
+I (3116) SCCB_ONLY: SUSPECT after restore STOP_START reg=0x42 value=0x00
+I (3136) SCCB_ONLY: SUSPECT_WRITE_RESULT toggle=PASS read_errors=0 target_mismatches=0 other_changes=0 restore=PASS restore_errors=0 restore_mismatches=0 => PASS
+I (3136) SCCB_ONLY: RESET_TEST begin: reset only, no RGB565/QQVGA initialization
+I (3146) SCCB_ONLY: RESET before STOP_START reg=0x12 value=0x04
+I (3156) SCCB_ONLY: RESET before STOP_START reg=0x11 value=0x03
+I (3156) SCCB_ONLY: RESET before STOP_START reg=0x0C value=0x04
+I (3166) SCCB_ONLY: RESET before STOP_START reg=0x3E value=0x1A
+I (3166) SCCB_ONLY: RESET before STOP_START reg=0x40 value=0xD0
+I (3176) SCCB_ONLY: RESET before STOP_START reg=0x72 value=0x22
+I (3186) SCCB_ONLY: RESET before STOP_START reg=0x73 value=0xF2
+I (3186) SCCB_ONLY: RESET before STOP_START reg=0x17 value=0x13
+I (3196) SCCB_ONLY: RESET before STOP_START reg=0x18 value=0x01
+I (3196) SCCB_ONLY: RESET before STOP_START reg=0x32 value=0x3E
+I (3206) SCCB_ONLY: RESET before STOP_START reg=0x19 value=0x03
+I (3206) SCCB_ONLY: RESET before STOP_START reg=0x1A value=0x7B
+I (3216) SCCB_ONLY: RESET before STOP_START reg=0x03 value=0x00
+I (3216) SCCB_ONLY: RESET before STOP_START reg=0x42 value=0x00
+I (3226) SCCB_ONLY: SOFT_RESET reg=0x12 value=0x80 result=ESP_OK (0x0)
+I (3456) SCCB_ONLY: PID STOP_START reg=0x0A value=0x76
+I (3456) SCCB_ONLY: VER STOP_START reg=0x0B value=0x73
+I (3456) SCCB_ONLY: MIDL STOP_START reg=0x1C value=0x7F
+I (3456) SCCB_ONLY: MIDH STOP_START reg=0x1D value=0xA2
+I (4456) SCCB_ONLY: ID_RESULT hz=100000 mode=STOP_START reads=400 errors=0 mismatches=0 => PASS
+I (4456) SCCB_ONLY: RESET after round=1
+I (4456) SCCB_ONLY: RESET after STOP_START reg=0x12 value=0x00
+I (4456) SCCB_ONLY: RESET change reg=0x12 before=0x04 after=0x00
+I (4466) SCCB_ONLY: RESET after STOP_START reg=0x11 value=0x80
+I (4466) SCCB_ONLY: RESET change reg=0x11 before=0x03 after=0x80
+I (4476) SCCB_ONLY: RESET after STOP_START reg=0x0C value=0x00
+I (4476) SCCB_ONLY: RESET change reg=0x0C before=0x04 after=0x00
+I (4486) SCCB_ONLY: RESET after STOP_START reg=0x3E value=0x00
+I (4496) SCCB_ONLY: RESET change reg=0x3E before=0x1A after=0x00
+I (4496) SCCB_ONLY: RESET after STOP_START reg=0x40 value=0xC0
+I (4506) SCCB_ONLY: RESET change reg=0x40 before=0xD0 after=0xC0
+I (4506) SCCB_ONLY: RESET after STOP_START reg=0x72 value=0x11
+I (4516) SCCB_ONLY: RESET change reg=0x72 before=0x22 after=0x11
+I (4516) SCCB_ONLY: RESET after STOP_START reg=0x73 value=0x00
+I (4526) SCCB_ONLY: RESET change reg=0x73 before=0xF2 after=0x00
+I (4536) SCCB_ONLY: RESET after STOP_START reg=0x17 value=0x11
+I (4536) SCCB_ONLY: RESET change reg=0x17 before=0x13 after=0x11
+I (4546) SCCB_ONLY: RESET after STOP_START reg=0x18 value=0x61
+I (4546) SCCB_ONLY: RESET change reg=0x18 before=0x01 after=0x61
+I (4556) SCCB_ONLY: RESET after STOP_START reg=0x32 value=0x80
+I (4556) SCCB_ONLY: RESET change reg=0x32 before=0x3E after=0x80
+I (4566) SCCB_ONLY: RESET after STOP_START reg=0x19 value=0x03
+I (4576) SCCB_ONLY: RESET after STOP_START reg=0x1A value=0x7B
+I (4576) SCCB_ONLY: RESET after STOP_START reg=0x03 value=0x00
+I (4586) SCCB_ONLY: RESET after STOP_START reg=0x42 value=0x00
+I (4686) SCCB_ONLY: RESET after round=2
+I (4686) SCCB_ONLY: RESET after STOP_START reg=0x42 value=0x00
+I (4686) SCCB_ONLY: RESET after STOP_START reg=0x03 value=0x00
+I (4686) SCCB_ONLY: RESET after STOP_START reg=0x1A value=0x7B
+I (4686) SCCB_ONLY: RESET after STOP_START reg=0x19 value=0x03
+I (4696) SCCB_ONLY: RESET after STOP_START reg=0x32 value=0x80
+I (4706) SCCB_ONLY: RESET after STOP_START reg=0x18 value=0x61
+I (4706) SCCB_ONLY: RESET after STOP_START reg=0x17 value=0x11
+I (4716) SCCB_ONLY: RESET after STOP_START reg=0x73 value=0x00
+I (4716) SCCB_ONLY: RESET after STOP_START reg=0x72 value=0x11
+I (4726) SCCB_ONLY: RESET after STOP_START reg=0x40 value=0xC0
+I (4726) SCCB_ONLY: RESET after STOP_START reg=0x3E value=0x00
+I (4736) SCCB_ONLY: RESET after STOP_START reg=0x0C value=0x00
+I (4736) SCCB_ONLY: RESET after STOP_START reg=0x11 value=0x80
+I (4746) SCCB_ONLY: RESET after STOP_START reg=0x12 value=0x00
+I (4856) SCCB_ONLY: RESET after round=3
+I (4856) SCCB_ONLY: RESET after STOP_START reg=0x12 value=0x00
+I (4856) SCCB_ONLY: RESET after STOP_START reg=0x11 value=0x80
+I (4856) SCCB_ONLY: RESET after STOP_START reg=0x0C value=0x00
+I (4856) SCCB_ONLY: RESET after STOP_START reg=0x3E value=0x00
+I (4866) SCCB_ONLY: RESET after STOP_START reg=0x40 value=0xC0
+I (4876) SCCB_ONLY: RESET after STOP_START reg=0x72 value=0x11
+I (4876) SCCB_ONLY: RESET after STOP_START reg=0x73 value=0x00
+I (4886) SCCB_ONLY: RESET after STOP_START reg=0x17 value=0x11
+I (4886) SCCB_ONLY: RESET after STOP_START reg=0x18 value=0x61
+I (4896) SCCB_ONLY: RESET after STOP_START reg=0x32 value=0x80
+I (4896) SCCB_ONLY: RESET after STOP_START reg=0x19 value=0x03
+I (4906) SCCB_ONLY: RESET after STOP_START reg=0x1A value=0x7B
+I (4906) SCCB_ONLY: RESET after STOP_START reg=0x03 value=0x00
+I (4916) SCCB_ONLY: RESET after STOP_START reg=0x42 value=0x00
+I (5026) SCCB_ONLY: RESET_RESULT write=PASS ids=PASS before_errors=0 after_errors=0 changed_regs=10 unstable_reads=0 reset_bit_set=0 A1=0/42 checks=PASS
+I (5026) SCCB_ONLY: RESET_RESULT checks communication/stability; does not verify all factory defaults or prove reset took effect
+I (5036) SCCB_ONLY: CONFIG_TEST begin: reset -> RGB565/QQVGA settings -> readback; capture disabled
+I (5046) SCCB_ONLY: CONFIG_RESET reg=0x12 value=0x80 result=ESP_OK (0x0)
+I (5266) SCCB_ONLY: CONFIG reset COM7 STOP_START reg=0x12 value=0x00
+I (5266) SCCB_ONLY: PID STOP_START reg=0x0A value=0x76
+I (5266) SCCB_ONLY: VER STOP_START reg=0x0B value=0x73
+I (5266) SCCB_ONLY: MIDL STOP_START reg=0x1C value=0x7F
+I (5276) SCCB_ONLY: MIDH STOP_START reg=0x1D value=0xA2
+I (6276) SCCB_ONLY: ID_RESULT hz=100000 mode=STOP_START reads=400 errors=0 mismatches=0 => PASS
+I (6276) SCCB_ONLY: CONFIG_WRITE reg=0x3A value=0x04 result=ESP_OK (0x0)
+I (6296) SCCB_ONLY: CONFIG_WRITE reg=0x11 value=0x00 result=ESP_OK (0x0)
+I (6316) SCCB_ONLY: CONFIG_WRITE reg=0x6B value=0x4A result=ESP_OK (0x0)
+I (6336) SCCB_ONLY: CONFIG_WRITE reg=0x15 value=0x02 result=ESP_OK (0x0)
+I (6356) SCCB_ONLY: CONFIG_WRITE reg=0x0D value=0x40 result=ESP_OK (0x0)
+I (6376) SCCB_ONLY: CONFIG_WRITE reg=0xB0 value=0x84 result=ESP_OK (0x0)
+I (6396) SCCB_ONLY: CONFIG_WRITE reg=0x3B value=0x12 result=ESP_OK (0x0)
+I (6416) SCCB_ONLY: CONFIG_WRITE reg=0x30 value=0x00 result=ESP_OK (0x0)
+I (6436) SCCB_ONLY: CONFIG_WRITE reg=0x31 value=0x00 result=ESP_OK (0x0)
+I (6456) SCCB_ONLY: CONFIG_WRITE reg=0x43 value=0x0A result=ESP_OK (0x0)
+I (6476) SCCB_ONLY: CONFIG_WRITE reg=0x44 value=0xF0 result=ESP_OK (0x0)
+I (6496) SCCB_ONLY: CONFIG_WRITE reg=0x45 value=0x34 result=ESP_OK (0x0)
+I (6516) SCCB_ONLY: CONFIG_WRITE reg=0x46 value=0x58 result=ESP_OK (0x0)
+I (6536) SCCB_ONLY: CONFIG_WRITE reg=0x47 value=0x28 result=ESP_OK (0x0)
+I (6556) SCCB_ONLY: CONFIG_WRITE reg=0x48 value=0x3A result=ESP_OK (0x0)
+I (6576) SCCB_ONLY: CONFIG_WRITE reg=0x6C value=0x0A result=ESP_OK (0x0)
+I (6596) SCCB_ONLY: CONFIG_WRITE reg=0x6D value=0x55 result=ESP_OK (0x0)
+I (6616) SCCB_ONLY: CONFIG_WRITE reg=0x6E value=0x11 result=ESP_OK (0x0)
+I (6636) SCCB_ONLY: CONFIG_WRITE reg=0x6F value=0x9E result=ESP_OK (0x0)
+I (6656) SCCB_ONLY: CONFIG_WRITE reg=0x13 value=0xC7 result=ESP_OK (0x0)
+I (6676) SCCB_ONLY: CONFIG_WRITE reg=0x12 value=0x04 result=ESP_OK (0x0)
+I (6696) SCCB_ONLY: CONFIG_WRITE reg=0x8C value=0x00 result=ESP_OK (0x0)
+I (6716) SCCB_ONLY: CONFIG_WRITE reg=0x04 value=0x00 result=ESP_OK (0x0)
+I (6736) SCCB_ONLY: CONFIG_WRITE reg=0x40 value=0xD0 result=ESP_OK (0x0)
+I (6756) SCCB_ONLY: CONFIG_WRITE reg=0x1E value=0x02 result=ESP_OK (0x0)
+I (6776) SCCB_ONLY: CONFIG_WRITE reg=0x14 value=0x6A result=ESP_OK (0x0)
+I (6796) SCCB_ONLY: CONFIG_WRITE reg=0x4F value=0xB3 result=ESP_OK (0x0)
+I (6816) SCCB_ONLY: CONFIG_WRITE reg=0x50 value=0xB3 result=ESP_OK (0x0)
+I (6836) SCCB_ONLY: CONFIG_WRITE reg=0x51 value=0x00 result=ESP_OK (0x0)
+I (6856) SCCB_ONLY: CONFIG_WRITE reg=0x52 value=0x3D result=ESP_OK (0x0)
+I (6876) SCCB_ONLY: CONFIG_WRITE reg=0x53 value=0xA7 result=ESP_OK (0x0)
+I (6896) SCCB_ONLY: CONFIG_WRITE reg=0x54 value=0xE4 result=ESP_OK (0x0)
+I (6916) SCCB_ONLY: CONFIG_WRITE reg=0x3D value=0x40 result=ESP_OK (0x0)
+I (6936) SCCB_ONLY: CONFIG_WRITE reg=0x0C value=0x04 result=ESP_OK (0x0)
+I (6956) SCCB_ONLY: CONFIG_WRITE reg=0x3E value=0x1A result=ESP_OK (0x0)
+I (6976) SCCB_ONLY: CONFIG_WRITE reg=0x70 value=0x3A result=ESP_OK (0x0)
+I (6996) SCCB_ONLY: CONFIG_WRITE reg=0x71 value=0x35 result=ESP_OK (0x0)
+I (7016) SCCB_ONLY: CONFIG_WRITE reg=0x72 value=0x22 result=ESP_OK (0x0)
+I (7036) SCCB_ONLY: CONFIG_WRITE reg=0x73 value=0xF2 result=ESP_OK (0x0)
+I (7056) SCCB_ONLY: CONFIG_WRITE reg=0xA2 value=0x02 result=ESP_OK (0x0)
+I (7076) SCCB_ONLY: CONFIG_WRITE reg=0x17 value=0x13 result=ESP_OK (0x0)
+I (7096) SCCB_ONLY: CONFIG_WRITE reg=0x18 value=0x01 result=ESP_OK (0x0)
+I (7116) SCCB_ONLY: CONFIG_WRITE reg=0x32 value=0x36 result=ESP_OK (0x0)
+I (7136) SCCB_ONLY: CONFIG_WRITE reg=0x19 value=0x03 result=ESP_OK (0x0)
+I (7156) SCCB_ONLY: CONFIG_WRITE reg=0x1A value=0x7A result=ESP_OK (0x0)
+I (7176) SCCB_ONLY: CONFIG_WRITE reg=0x03 value=0x08 result=ESP_OK (0x0)
+I (7196) SCCB_ONLY: CONFIG_CLKRC reg=0x11 value=0x00 result=ESP_OK (0x0)
+I (7316) SCCB_ONLY: CONFIG_VERIFY round=1
+I (7316) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3A value=0x04
+I (7316) SCCB_ONLY: CONFIG_READ STOP_START reg=0x11 value=0x00
+I (7316) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6B value=0x4A
+I (7316) SCCB_ONLY: CONFIG_READ STOP_START reg=0x15 value=0x02
+I (7326) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0D value=0x40
+I (7336) SCCB_ONLY: CONFIG_READ STOP_START reg=0xB0 value=0x84
+I (7336) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3B value=0x12
+I (7346) SCCB_ONLY: CONFIG_READ STOP_START reg=0x30 value=0x00
+I (7346) SCCB_ONLY: CONFIG_READ STOP_START reg=0x31 value=0x00
+I (7356) SCCB_ONLY: CONFIG_READ STOP_START reg=0x43 value=0x0A
+I (7356) SCCB_ONLY: CONFIG_READ STOP_START reg=0x44 value=0xF0
+I (7366) SCCB_ONLY: CONFIG_READ STOP_START reg=0x45 value=0x34
+I (7366) SCCB_ONLY: CONFIG_READ STOP_START reg=0x46 value=0x58
+I (7376) SCCB_ONLY: CONFIG_READ STOP_START reg=0x47 value=0x28
+I (7386) SCCB_ONLY: CONFIG_READ STOP_START reg=0x48 value=0x3A
+I (7386) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6C value=0x0A
+I (7396) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6D value=0x55
+I (7396) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6E value=0x11
+I (7406) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6F value=0x9E
+I (7406) SCCB_ONLY: CONFIG_READ STOP_START reg=0x13 value=0xC7
+I (7416) SCCB_ONLY: CONFIG_READ STOP_START reg=0x12 value=0x04
+I (7416) SCCB_ONLY: CONFIG_READ STOP_START reg=0x8C value=0x00
+I (7426) SCCB_ONLY: CONFIG_READ STOP_START reg=0x04 value=0x01
+I (7436) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x04 expected=0x00 actual=0x01 mask=0x40
+I (7436) SCCB_ONLY: CONFIG_READ STOP_START reg=0x40 value=0xD0
+I (7446) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1E value=0x02
+I (7446) SCCB_ONLY: CONFIG_READ STOP_START reg=0x14 value=0x6A
+I (7456) SCCB_ONLY: CONFIG_READ STOP_START reg=0x4F value=0xB3
+I (7466) SCCB_ONLY: CONFIG_READ STOP_START reg=0x50 value=0xB3
+I (7466) SCCB_ONLY: CONFIG_READ STOP_START reg=0x51 value=0x00
+I (7476) SCCB_ONLY: CONFIG_READ STOP_START reg=0x52 value=0x3D
+I (7476) SCCB_ONLY: CONFIG_READ STOP_START reg=0x53 value=0xA7
+I (7486) SCCB_ONLY: CONFIG_READ STOP_START reg=0x54 value=0xE4
+I (7486) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3D value=0x40
+I (7496) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0C value=0x04
+I (7496) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3E value=0x1A
+I (7506) SCCB_ONLY: CONFIG_READ STOP_START reg=0x70 value=0x3A
+I (7516) SCCB_ONLY: CONFIG_READ STOP_START reg=0x71 value=0x35
+I (7516) SCCB_ONLY: CONFIG_READ STOP_START reg=0x72 value=0x22
+I (7526) SCCB_ONLY: CONFIG_READ STOP_START reg=0x73 value=0xF2
+I (7526) SCCB_ONLY: CONFIG_READ STOP_START reg=0xA2 value=0x02
+I (7536) SCCB_ONLY: CONFIG_READ STOP_START reg=0x17 value=0x13
+I (7536) SCCB_ONLY: CONFIG_READ STOP_START reg=0x18 value=0x01
+I (7546) SCCB_ONLY: CONFIG_READ STOP_START reg=0x32 value=0x36
+I (7546) SCCB_ONLY: CONFIG_READ STOP_START reg=0x19 value=0x03
+I (7556) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1A value=0x7A
+I (7566) SCCB_ONLY: CONFIG_READ STOP_START reg=0x03 value=0x08
+I (7566) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x03 expected=0x08 actual=0x08 mask=0x0F
+I (7676) SCCB_ONLY: CONFIG_VERIFY round=2
+I (7676) SCCB_ONLY: CONFIG_READ STOP_START reg=0x03 value=0x08
+I (7676) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x03 expected=0x08 actual=0x08 mask=0x0F
+I (7676) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1A value=0x7A
+I (7686) SCCB_ONLY: CONFIG_READ STOP_START reg=0x19 value=0x03
+I (7686) SCCB_ONLY: CONFIG_READ STOP_START reg=0x32 value=0x36
+I (7696) SCCB_ONLY: CONFIG_READ STOP_START reg=0x18 value=0x01
+I (7696) SCCB_ONLY: CONFIG_READ STOP_START reg=0x17 value=0x13
+I (7706) SCCB_ONLY: CONFIG_READ STOP_START reg=0xA2 value=0x02
+I (7706) SCCB_ONLY: CONFIG_READ STOP_START reg=0x73 value=0xF2
+I (7716) SCCB_ONLY: CONFIG_READ STOP_START reg=0x72 value=0x22
+I (7726) SCCB_ONLY: CONFIG_READ STOP_START reg=0x71 value=0x35
+I (7726) SCCB_ONLY: CONFIG_READ STOP_START reg=0x70 value=0x3A
+I (7736) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3E value=0x1A
+I (7736) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0C value=0x04
+I (7746) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3D value=0x40
+I (7746) SCCB_ONLY: CONFIG_READ STOP_START reg=0x54 value=0xE4
+I (7756) SCCB_ONLY: CONFIG_READ STOP_START reg=0x53 value=0xA7
+I (7756) SCCB_ONLY: CONFIG_READ STOP_START reg=0x52 value=0x3D
+I (7766) SCCB_ONLY: CONFIG_READ STOP_START reg=0x51 value=0x00
+I (7776) SCCB_ONLY: CONFIG_READ STOP_START reg=0x50 value=0xB3
+I (7776) SCCB_ONLY: CONFIG_READ STOP_START reg=0x4F value=0xB3
+I (7786) SCCB_ONLY: CONFIG_READ STOP_START reg=0x14 value=0x6A
+I (7786) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1E value=0x02
+I (7796) SCCB_ONLY: CONFIG_READ STOP_START reg=0x40 value=0xD0
+I (7796) SCCB_ONLY: CONFIG_READ STOP_START reg=0x04 value=0x01
+I (7806) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x04 expected=0x00 actual=0x01 mask=0x40
+I (7816) SCCB_ONLY: CONFIG_READ STOP_START reg=0x8C value=0x00
+I (7816) SCCB_ONLY: CONFIG_READ STOP_START reg=0x12 value=0x04
+I (7826) SCCB_ONLY: CONFIG_READ STOP_START reg=0x13 value=0xC7
+I (7826) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6F value=0x9E
+I (7836) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6E value=0x11
+I (7836) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6D value=0x55
+I (7846) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6C value=0x0A
+I (7856) SCCB_ONLY: CONFIG_READ STOP_START reg=0x48 value=0x3A
+I (7856) SCCB_ONLY: CONFIG_READ STOP_START reg=0x47 value=0x28
+I (7866) SCCB_ONLY: CONFIG_READ STOP_START reg=0x46 value=0x58
+I (7866) SCCB_ONLY: CONFIG_READ STOP_START reg=0x45 value=0x34
+I (7876) SCCB_ONLY: CONFIG_READ STOP_START reg=0x44 value=0xF0
+I (7876) SCCB_ONLY: CONFIG_READ STOP_START reg=0x43 value=0x0A
+I (7886) SCCB_ONLY: CONFIG_READ STOP_START reg=0x31 value=0x00
+I (7886) SCCB_ONLY: CONFIG_READ STOP_START reg=0x30 value=0x00
+I (7896) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3B value=0x12
+I (7906) SCCB_ONLY: CONFIG_READ STOP_START reg=0xB0 value=0x84
+I (7906) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0D value=0x40
+I (7916) SCCB_ONLY: CONFIG_READ STOP_START reg=0x15 value=0x02
+I (7916) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6B value=0x4A
+I (7926) SCCB_ONLY: CONFIG_READ STOP_START reg=0x11 value=0x00
+I (7926) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3A value=0x04
+I (8036) SCCB_ONLY: CONFIG_VERIFY round=3
+I (8036) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3A value=0x04
+I (8036) SCCB_ONLY: CONFIG_READ STOP_START reg=0x11 value=0x00
+I (8036) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6B value=0x4A
+I (8036) SCCB_ONLY: CONFIG_READ STOP_START reg=0x15 value=0x02
+I (8046) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0D value=0x40
+I (8056) SCCB_ONLY: CONFIG_READ STOP_START reg=0xB0 value=0x84
+I (8056) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3B value=0x12
+I (8066) SCCB_ONLY: CONFIG_READ STOP_START reg=0x30 value=0x00
+I (8066) SCCB_ONLY: CONFIG_READ STOP_START reg=0x31 value=0x00
+I (8076) SCCB_ONLY: CONFIG_READ STOP_START reg=0x43 value=0x0A
+I (8076) SCCB_ONLY: CONFIG_READ STOP_START reg=0x44 value=0xF0
+I (8086) SCCB_ONLY: CONFIG_READ STOP_START reg=0x45 value=0x34
+I (8086) SCCB_ONLY: CONFIG_READ STOP_START reg=0x46 value=0x58
+I (8096) SCCB_ONLY: CONFIG_READ STOP_START reg=0x47 value=0x28
+I (8106) SCCB_ONLY: CONFIG_READ STOP_START reg=0x48 value=0x3A
+I (8106) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6C value=0x0A
+I (8116) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6D value=0x55
+I (8116) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6E value=0x11
+I (8126) SCCB_ONLY: CONFIG_READ STOP_START reg=0x6F value=0x9E
+I (8126) SCCB_ONLY: CONFIG_READ STOP_START reg=0x13 value=0xC7
+I (8136) SCCB_ONLY: CONFIG_READ STOP_START reg=0x12 value=0x04
+I (8136) SCCB_ONLY: CONFIG_READ STOP_START reg=0x8C value=0x00
+I (8146) SCCB_ONLY: CONFIG_READ STOP_START reg=0x04 value=0x01
+I (8156) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x04 expected=0x00 actual=0x01 mask=0x40
+I (8156) SCCB_ONLY: CONFIG_READ STOP_START reg=0x40 value=0xD0
+I (8166) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1E value=0x02
+I (8166) SCCB_ONLY: CONFIG_READ STOP_START reg=0x14 value=0x6A
+I (8176) SCCB_ONLY: CONFIG_READ STOP_START reg=0x4F value=0xB3
+I (8186) SCCB_ONLY: CONFIG_READ STOP_START reg=0x50 value=0xB3
+I (8186) SCCB_ONLY: CONFIG_READ STOP_START reg=0x51 value=0x00
+I (8196) SCCB_ONLY: CONFIG_READ STOP_START reg=0x52 value=0x3D
+I (8196) SCCB_ONLY: CONFIG_READ STOP_START reg=0x53 value=0xA7
+I (8206) SCCB_ONLY: CONFIG_READ STOP_START reg=0x54 value=0xE4
+I (8206) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3D value=0x40
+I (8216) SCCB_ONLY: CONFIG_READ STOP_START reg=0x0C value=0x04
+I (8216) SCCB_ONLY: CONFIG_READ STOP_START reg=0x3E value=0x1A
+I (8226) SCCB_ONLY: CONFIG_READ STOP_START reg=0x70 value=0x3A
+I (8236) SCCB_ONLY: CONFIG_READ STOP_START reg=0x71 value=0x35
+I (8236) SCCB_ONLY: CONFIG_READ STOP_START reg=0x72 value=0x22
+I (8246) SCCB_ONLY: CONFIG_READ STOP_START reg=0x73 value=0xF2
+I (8246) SCCB_ONLY: CONFIG_READ STOP_START reg=0xA2 value=0x02
+I (8256) SCCB_ONLY: CONFIG_READ STOP_START reg=0x17 value=0x13
+I (8256) SCCB_ONLY: CONFIG_READ STOP_START reg=0x18 value=0x01
+I (8266) SCCB_ONLY: CONFIG_READ STOP_START reg=0x32 value=0x36
+I (8266) SCCB_ONLY: CONFIG_READ STOP_START reg=0x19 value=0x03
+I (8276) SCCB_ONLY: CONFIG_READ STOP_START reg=0x1A value=0x7A
+I (8286) SCCB_ONLY: CONFIG_READ STOP_START reg=0x03 value=0x08
+I (8286) SCCB_ONLY: CONFIG_MASK_MATCH reg=0x03 expected=0x08 actual=0x08 mask=0x0F
+I (8396) SCCB_ONLY: PID STOP_START reg=0x0A value=0x76
+I (8396) SCCB_ONLY: VER STOP_START reg=0x0B value=0x73
+I (8396) SCCB_ONLY: MIDL STOP_START reg=0x1C value=0x7F
+I (8396) SCCB_ONLY: MIDH STOP_START reg=0x1D value=0xA2
+I (9396) SCCB_ONLY: ID_RESULT hz=100000 mode=STOP_START reads=400 errors=0 mismatches=0 => PASS
+I (9396) SCCB_ONLY: CONFIG_RESULT writes=46/46 clock=PASS ids=PASS matches=138 read_errors=0 mismatches=0 => PASS
+I (9396) SCCB_ONLY: CONFIG_RESULT covers register readback only; 160x120 RGB565 output remains unverified
+I (9406) SCCB_ONLY: SCCB_ONLY_RESULT mode=STOP_START hz=100000 stable_id_modes=1/1 write_passes=1/1
+I (9916) SCCB_ONLY: SIGNAL name=PCLK gpio=13 rising_edges=2469736 window_us=493961 approx_hz=4999860 level=0 => ACTIVE
+I (10416) SCCB_ONLY: SIGNAL name=VSYNC gpio=14 rising_edges=13 window_us=499238 approx_hz=26 level=1 => ACTIVE
+I (10916) SCCB_ONLY: SIGNAL name=HREF gpio=21 rising_edges=1490 window_us=499385 approx_hz=2983 level=0 => ACTIVE
+I (10916) SCCB_ONLY: SIGNAL_RESULT PCLK=ACTIVE VSYNC=ACTIVE HREF=ACTIVE; edge activity only, timing/polarity unverified
+I (10916) SCCB_ONLY: CAPTURE_TEST begin: library init, RGB565 160x120 DRAM, CLKRC=0x03, 5 attempts
+I (10926) s3 ll_cam: DMA Channel=0
+I (10936) cam_hal: cam init ok
+I (10936) sccb-ng: pin_sda 1 pin_scl 2
+I (10936) sccb-ng: sccb_i2c_port=1
+I (10956) ov7725: Mismatch PID=0x76
+I (10956) camera: Camera PID=0x76 VER=0x73 MIDL=0x7f MIDH=0xa2
+I (10956) camera: Detected OV7670 camera
+I (10966) camera: Detected camera at address=0x21
+I (11016) cam_hal: PSRAM DMA mode disabled
+I (11016) s3 ll_cam: node_size: 3840, nodes_per_line: 1, lines_per_node: 12
+I (11016) s3 ll_cam: dma_half_buffer_min:  3840, dma_half_buffer:  7680, lines_per_half_buffer: 24, dma_buffer_size: 30720
+I (11026) cam_hal: buffer_size: 30720, half_buffer_size: 7680, node_buffer_size: 3840, node_cnt: 8, total_cnt: 5
+I (11036) cam_hal: Allocating 38400 Byte frame buffer in OnBoard RAM
+I (11036) cam_hal: cam config ok
+I (11106) SCCB_ONLY: CAPTURE CLKRC before fix STOP_START reg=0x11 value=0xA1
+I (11106) SCCB_ONLY: CAPTURE_CLKRC_WRITE reg=0x11 value=0x03 result=ESP_OK (0x0)
+I (11126) SCCB_ONLY: CAPTURE CLKRC after fix STOP_START reg=0x11 value=0x03
+I (11126) SCCB_ONLY: CAPTURE_CLKRC_RESULT expected=0x03 => PASS
+I (11126) SCCB_ONLY: CAPTURE VREF before window fix STOP_START reg=0x03 value=0x08
+I (11126) SCCB_ONLY: CAPTURE_VSTOP_WRITE reg=0x1A value=0x7B result=ESP_OK (0x0)
+I (11156) SCCB_ONLY: CAPTURE_VREF_WRITE reg=0x03 value=0x00 result=ESP_OK (0x0)
+I (11176) SCCB_ONLY: CAPTURE_WINDOW_WRITE start=12 stop=492 VSTOP=0x7B VREF_mask=0x0F expected=0x00 => PASS
+I (11176) SCCB_ONLY: CAPTURE HREF before horizontal trial STOP_START reg=0x32 value=0x36
+I (11176) SCCB_ONLY: CAPTURE_HSTOP_WRITE reg=0x18 value=0x01 result=ESP_OK (0x0)
+I (11206) SCCB_ONLY: CAPTURE_HREF_WRITE reg=0x32 value=0x3E result=ESP_OK (0x0)
+I (11226) SCCB_ONLY: CAPTURE_HORIZONTAL_TRIAL start=158 baseline_stop=14 trial_stop=15 expected_HREF_window=0x3E => PASS
+I (11326) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x0A value=0x76
+I (11326) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x0B value=0x73
+I (11326) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x12 value=0x04
+I (11326) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x11 value=0x03
+I (11336) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x40 value=0xD0
+I (11336) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x0C value=0x04
+I (11346) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x3E value=0x1A
+I (11356) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x72 value=0x22
+I (11356) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x73 value=0xF2
+I (11366) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x17 value=0x13
+I (11366) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x18 value=0x01
+I (11376) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x32 value=0x3E
+I (11386) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x19 value=0x03
+I (11386) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x1A value=0x7B
+I (11396) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x03 value=0x00
+I (11396) SCCB_ONLY: CAPTURE_SETUP STOP_START reg=0x04 value=0x01
+I (11606) SCCB_ONLY: SYNC_TEST begin: HREF rising edges per VSYNC interval, PCLK_edge=RISING CLKRC=0x03, up to 5 seconds
+I (13226) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=936 HREF_rising=0
+I (13226) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13226) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159931 HREF_lines=120 expected=120
+I (13236) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13236) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13246) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13256) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13266) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13266) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13276) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13286) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13286) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13296) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13306) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13316) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13316) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13326) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13336) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=0
+I (13346) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=0 expected=120
+I (13346) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13356) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=0 expected=120
+I (13366) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13366) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13376) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13386) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13396) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13396) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13406) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13416) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13426) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13426) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13436) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13446) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13456) SCCB_ONLY: SYNC_INTERVAL VSYNC=HIGH duration_us=158995 HREF_rising=120
+I (13456) SCCB_ONLY: SYNC_FRAME edge=FALLING period_us=159936 HREF_lines=120 expected=120
+I (13466) SCCB_ONLY: SYNC_INTERVAL VSYNC=LOW duration_us=941 HREF_rising=0
+I (13476) SCCB_ONLY: SYNC_FRAME edge=RISING period_us=159936 HREF_lines=120 expected=120
+I (13486) SCCB_ONLY: SYNC_RESULT edges=20 periods=18 errors=0 lines_min=0 lines_max=120 expected=120; overlapping periods
+I (13496) SCCB_ONLY: SYNC_RESULT observes line count and physical VSYNC levels; does not prove DMA timing or PCLK count per line
+I (13506) SCCB_ONLY: PCLK_TEST begin: PCLK gated by HREF HIGH, snapshots at HREF falling edges, PCLK_edge=RISING CLKRC=0x03, up to 5 seconds
+I (13556) SCCB_ONLY: PCLK_LINE edge=RISING sample=1 clocks=320 expected=320 interval_us=1250 => PASS
+I (13556) SCCB_ONLY: PCLK_LINE edge=RISING sample=2 clocks=320 expected=320 interval_us=1255 => PASS
+I (13556) SCCB_ONLY: PCLK_LINE edge=RISING sample=3 clocks=320 expected=320 interval_us=10662 => PASS
+I (13566) SCCB_ONLY: PCLK_LINE edge=RISING sample=4 clocks=320 expected=320 interval_us=1255 => PASS
+I (13576) SCCB_ONLY: PCLK_LINE edge=RISING sample=5 clocks=320 expected=320 interval_us=1254 => PASS
+I (13586) SCCB_ONLY: PCLK_LINE edge=RISING sample=6 clocks=320 expected=320 interval_us=1254 => PASS
+I (13596) SCCB_ONLY: PCLK_LINE edge=RISING sample=7 clocks=320 expected=320 interval_us=1255 => PASS
+I (13606) SCCB_ONLY: PCLK_LINE edge=RISING sample=8 clocks=320 expected=320 interval_us=1254 => PASS
+I (13616) SCCB_ONLY: PCLK_LINE edge=RISING sample=9 clocks=320 expected=320 interval_us=1255 => PASS
+I (13616) SCCB_ONLY: PCLK_LINE edge=RISING sample=10 clocks=320 expected=320 interval_us=1254 => PASS
+I (13626) SCCB_ONLY: PCLK_LINE edge=RISING sample=11 clocks=320 expected=320 interval_us=1254 => PASS
+I (13636) SCCB_ONLY: PCLK_LINE edge=RISING sample=12 clocks=320 expected=320 interval_us=1255 => PASS
+I (13646) SCCB_ONLY: PCLK_LINE edge=RISING sample=13 clocks=320 expected=320 interval_us=1254 => PASS
+I (13656) SCCB_ONLY: PCLK_LINE edge=RISING sample=14 clocks=320 expected=320 interval_us=1255 => PASS
+I (13666) SCCB_ONLY: PCLK_LINE edge=RISING sample=15 clocks=320 expected=320 interval_us=1254 => PASS
+I (13676) SCCB_ONLY: PCLK_LINE edge=RISING sample=16 clocks=320 expected=320 interval_us=1254 => PASS
+I (13686) SCCB_ONLY: PCLK_LINE edge=RISING sample=17 clocks=320 expected=320 interval_us=1255 => PASS
+I (13696) SCCB_ONLY: PCLK_LINE edge=RISING sample=18 clocks=320 expected=320 interval_us=1254 => PASS
+I (13696) SCCB_ONLY: PCLK_LINE edge=RISING sample=19 clocks=320 expected=320 interval_us=1255 => PASS
+I (13706) SCCB_ONLY: PCLK_RESULT edge=RISING edges=20 sampled_lines=19 errors=0 clocks_min=320 clocks_max=320 mismatches=0 expected=320 => PASS
+I (13726) SCCB_ONLY: PCLK_RESULT samples adjacent lines; ISR delays or missed HREF interrupts can affect counts
+I (13736) SCCB_ONLY: PCLK_TEST begin: PCLK gated by HREF HIGH, snapshots at HREF falling edges, PCLK_edge=FALLING CLKRC=0x03, up to 5 seconds
+I (13786) SCCB_ONLY: PCLK_LINE edge=FALLING sample=1 clocks=320 expected=320 interval_us=1248 => PASS
+I (13786) SCCB_ONLY: PCLK_LINE edge=FALLING sample=2 clocks=320 expected=320 interval_us=1255 => PASS
+I (13786) SCCB_ONLY: PCLK_LINE edge=FALLING sample=3 clocks=320 expected=320 interval_us=1254 => PASS
+I (13796) SCCB_ONLY: PCLK_LINE edge=FALLING sample=4 clocks=320 expected=320 interval_us=1254 => PASS
+I (13806) SCCB_ONLY: PCLK_LINE edge=FALLING sample=5 clocks=320 expected=320 interval_us=1255 => PASS
+I (13816) SCCB_ONLY: PCLK_LINE edge=FALLING sample=6 clocks=320 expected=320 interval_us=1254 => PASS
+I (13826) SCCB_ONLY: PCLK_LINE edge=FALLING sample=7 clocks=320 expected=320 interval_us=1255 => PASS
+I (13836) SCCB_ONLY: PCLK_LINE edge=FALLING sample=8 clocks=320 expected=320 interval_us=1254 => PASS
+I (13846) SCCB_ONLY: PCLK_LINE edge=FALLING sample=9 clocks=320 expected=320 interval_us=1254 => PASS
+I (13846) SCCB_ONLY: PCLK_LINE edge=FALLING sample=10 clocks=320 expected=320 interval_us=1255 => PASS
+I (13856) SCCB_ONLY: PCLK_LINE edge=FALLING sample=11 clocks=320 expected=320 interval_us=1254 => PASS
+I (13866) SCCB_ONLY: PCLK_LINE edge=FALLING sample=12 clocks=320 expected=320 interval_us=1255 => PASS
+I (13876) SCCB_ONLY: PCLK_LINE edge=FALLING sample=13 clocks=320 expected=320 interval_us=1254 => PASS
+I (13886) SCCB_ONLY: PCLK_LINE edge=FALLING sample=14 clocks=320 expected=320 interval_us=1254 => PASS
+I (13896) SCCB_ONLY: PCLK_LINE edge=FALLING sample=15 clocks=320 expected=320 interval_us=1255 => PASS
+I (13906) SCCB_ONLY: PCLK_LINE edge=FALLING sample=16 clocks=320 expected=320 interval_us=1254 => PASS
+I (13916) SCCB_ONLY: PCLK_LINE edge=FALLING sample=17 clocks=320 expected=320 interval_us=1255 => PASS
+I (13926) SCCB_ONLY: PCLK_LINE edge=FALLING sample=18 clocks=320 expected=320 interval_us=1254 => PASS
+I (13936) SCCB_ONLY: PCLK_LINE edge=FALLING sample=19 clocks=320 expected=320 interval_us=1254 => PASS
+I (13946) SCCB_ONLY: PCLK_RESULT edge=FALLING edges=20 sampled_lines=19 errors=0 clocks_min=320 clocks_max=320 mismatches=0 expected=320 => PASS
+I (13956) SCCB_ONLY: PCLK_RESULT samples adjacent lines; ISR delays or missed HREF interrupts can affect counts
+I (13966) SCCB_ONLY: PCLK_COMPARE hstop=15 rising=320..320 samples=19 errors=0 falling=320..320 samples=19 errors=0 expected=320 measurements=VALID
+I (13976) SCCB_ONLY: PCLK_COMPARE stable falling_minus_rising=0; sequential line samples, not the same lines
+I (13996) SCCB_ONLY: CAPTURE_FRAME attempt=1 wait_ms=0 size=160x120 bytes=38400 format=0 min=0 max=251 hash=0x546A3CBD shape=PASS
+I (14196) SCCB_ONLY: CAPTURE_FRAME attempt=2 wait_ms=0 size=160x120 bytes=38400 format=0 min=0 max=251 hash=0xBCA29932 shape=PASS
+I (14486) SCCB_ONLY: CAPTURE_FRAME attempt=3 wait_ms=91 size=160x120 bytes=38400 format=0 min=0 max=251 hash=0xCB62844D shape=PASS
+I (14806) SCCB_ONLY: CAPTURE_FRAME attempt=4 wait_ms=121 size=160x120 bytes=38400 format=0 min=0 max=251 hash=0x6CF767F6 shape=PASS
+I (15126) SCCB_ONLY: CAPTURE_FRAME attempt=5 wait_ms=121 size=160x120 bytes=38400 format=0 min=0 max=251 hash=0xD08C9FA3 shape=PASS
+FRAME_BEGIN width=160 height=120 bytes=38400 fnv=D08C9FA3
+FRAME_DATA 000000 10E00000000000000000527A737A73F26BD26BB16370634B5B2B530A4AC94AA8428B4A4B422B3A4A3A2A3A0931E931C931A829A3298331622962296229622941
+FRAME_DATA 000064 214129412941214121212141214121212121212121212121212121212121212121412141214121412941214121412941296229622962296229823182318231A2
+FRAME_DATA 000128 31A231C231C231A331C331C331C339C839C839E339E839E839E839E839E839E839E83A083A083A093A093A083A0839E83A083A083A083A093A093A083A083A08
+FRAME_DATA 000192 3A0839E839E831E831E339E839E8320831E831E93A0931E831E831E831E839C839C839E839E839E839E839E339E339E839E831E83A093A083A0839E939E93208
+FRAME_DATA 000256 32283A283A2832283A283A093A093A093A293A093A293A283228322932293A283208320831E8320831E331E831C331E331E331C329A329A22982298221622162
+FRAME_DATA 000320 18E00000000000000000527A737A6BF16BD163AB638B5B2A5B0A52E94AA84A884A6B4A4B422B3A2A3A0A39E939C831C831A32982298229822962294229422942
+FRAME_DATA 000384 21412141214121222122212121212121212121202120212121212121212121212121212121212142214221422942294229622962298229822982318331A331A2
+FRAME_DATA 000448 31A331A331A339A339C331E331E339C339E339E839E839E839E83A083A0839E839E83A083A0839E839E83A0939E83A083A08420839E83A0842083A083A083A08
+FRAME_DATA 000512 3A083A0939E939E839E83A0839E839E839E83A093A093A0839E839E839E839E839E831E831E831E839E83A093A0839E939E93A083A08320932093A093A093A09
+FRAME_DATA 000576 3A093A283A283A293A293A293A293A293A293A293A293A493A493A483A483A283A28322832083208320831E831E831E331E331C829C329A229A2298229822182
+FRAME_DATA 000640 18E00000000000000000525A735A6BD163B1638B5B6B5B0A5AE952C84AA8428B426B424B422A3A2A3A0A39E939C831A331A32983296329622962294229422941
+FRAME_DATA 000704 29412941212121212121212129212121212121212121212121212120212021212121212121212141214121612161294229622962296229622983318331A331A2
+FRAME_DATA 000768 31A231A331A331C331C331E331E339E339E839E839C839E839E83A083A0839E839E83A083A0839E83A083A0839E83A083A084208420841E8420941E941E93A29
+FRAME_DATA 000832 3A29420841E83A093A093A093A093A0939E939E839E83A083A083208320839E839E839C839E939C941E93A093A093A083A093A293A293A093A093A293A293A29
+FRAME_DATA 000896 3A283A2A3A293A293A493A493A493A293A29422942293A493A6A3A693A693A493A493A493A283A2932293208320831E931E831E329C329C329A329A329822982
+FRAME_DATA 000960 19000000000000000000525A6B5A6BB16B90636B5B2A5AE952C94AA94A884A68424B424A3A2A3A0A3A0939C831A831A329A32983296229622962294229422942
+FRAME_DATA 001024 2941292229222141212121412141212121212121212121212121212121212122212221212141294129412942294229622962296229622982298231A231A23183
+FRAME_DATA 001088 318331A331A339A339C331C839E839C839E839E839C83A083A0839E939E93A083A0839E839E83A083A083A093A0942083A083A083A083A283A284209420939E8
+FRAME_DATA 001152 39E83A093A09420842083A083A083A093A093A083A083A093A0939E839E939E939E939E939E93A083A083A083A093A093A093A093A093A293A293A093A093A29
+FRAME_DATA 001216 3A293A493A493A293A4A3A493A493A493A49426942693A6A3A6A3A893A893A6A3A6A3A693A493A4A3A493A293A283A093A0831E831C829C329C329A329A321A2
+FRAME_DATA 001280 190000000000000000004A5A6B396BB063705B6B532A52E952C84AA84A884A6B4A2A422A422A3A0939E931E831C3318329823162316229822962294229422162
+FRAME_DATA 001344 2142294129412922292221412141212121412141212121212121212121412141212129212921294229422942296229422962296229822962298231A231A231A2
+FRAME_DATA 001408 31A331A331C331C339C339C339C839E839E839E83A083A083A083A093A0939E93A093A093A093A083A083A083A083A083A083A083A083A083A283A293A294209
+FRAME_DATA 001472 42093A093A293A293A093A093A093A093A0939E83A083A093A0939E839E83A0932093A093A093A083A0832093A093A293A293A093A093A293A293A293A293A29
+FRAME_DATA 001536 3A2A3A493A49424942493A693A6A426A3A4A426A426A428A426A428A426A426A428A426A3A6A3A6A3A6A3A493A493A293A293208320831E329C329C329C329A2
+FRAME_DATA 001600 192000000000000000004A5A6339639063705B4A530952A952894A884A6B426B422B42293A2939E939C831A831A329A329A33162316229622961296229422942
+FRAME_DATA 001664 294229612941214221422142214121212121212121212121212121212121212121212121214121422142294229422962296229622962296231823182318231A3
+FRAME_DATA 001728 31A331A331C339A339C839C839C839E339E839E83A083A093A093A083A0839E939E93A083A083A083A083A093A093A083A0842094209420942093A293A293A29
+FRAME_DATA 001792 3A2842293A093A093A093A093A093A093A093A093A093A093A093A093A093A0932093A093A093A083A293A083A293A293A293A293A293A293A293A293A2A4229
+FRAME_DATA 001856 42293A4A3A4A3A6942693A6A3A6A424A426A428A428A428A428A428B428A428A428A428A428A426A424A426A3A6A3A493A283228320831E831C831C831C331A3
+FRAME_DATA 001920 212000000000000000004A396B1963905B4B5B0A52E94AC94AA84A684A6B424B422A3A093A0939E831C831A831A3318331832962296229622962296129412142
+FRAME_DATA 001984 214221622161214121412941294129222922212121212121212121212121294129412921292121422142214229422962296229612962296231823182318231A3
+FRAME_DATA 002048 31A331A331A331C331C331E331E831E33A033A083A084208420841E939E93A083A083A083A083A083A09420941E93A083A083A08420842094209420842083A49
+FRAME_DATA 002112 3A293A293A293A293A093A293A293A093A093A093A093A094209420942093A083A083A093A093A093A093A093A093A293A293A293A293A493A493A2A424A3A4A
+FRAME_DATA 002176 424A3A6A3A6A3A6A3A6A3A8A3A8A428B428B428A428A428A428A4A8B4A8B42AB42AB42CB42CB428B426A3A6A3A6A3A693A683A293A08322831E831E831E831C3
+FRAME_DATA 002240 212100000000000000004A396B19638B5B2A530A52C94AA84A88426B424B424B3A2A3A093A0939E831C831A331A329A329832982298231822962294229412942
+FRAME_DATA 002304 29422942294221422942292229222142214229412121294129412141214121412141214121412141214129422942294229622962296229622982318231833183
+FRAME_DATA 002368 31A331C331C331C339C339E339E839E339E339E83A093A083A083A083A083A083A083A083A08420942093A293A29422842084228422842294209422942293A29
+FRAME_DATA 002432 42294229422942293A293A293A293A093A093A093A293A293A293A293A293A093A093A283A283A293A293A2932293A293A493A493A49422A422A3A2A422A3A4A
+FRAME_DATA 002496 3A4A426A426A426A426A428B426A428A428A428B42AB428B42AB42AB42AB4AAB4AAB4ACB4AAB42AB428A428A3A8A42693A493A4A3A4A3A09320831E831E829C3
+FRAME_DATA 002560 212100000000000000004A196AF8636B5B0A53094AE84AA84268424B424B422A3A2939E939E931E331C331833183318231822982298229622962294229422941
+FRAME_DATA 002624 2941292229222941214129222942292129212141214121612161294129412142214221412141294229422941294229412962296129612961298229A329A331A2
+FRAME_DATA 002688 31C331A331C331C331E339E339E339E83A083A083A08420842083A0942093A293A29420842083A094209422942293A483A484229422942294229422942294229
+FRAME_DATA 002752 4229422942293A293A29422942293A093A093A293A293A293A293A093A093A293A093A293A293A093A093A293A293A2A3A4A3A2A3A2A3A4A3A4A422A424A3A6A
+FRAME_DATA 002816 3A6A3A6A426B426A426A426B428B428A428A428B4AAB42AB4AAB4ACB4ACB4ACB4ACB4ACB4ACB42EB42CA42AA428A426A3A693A493A493A493229320831E829E3
+FRAME_DATA 002880 214100000000000000004A1962F85B2B5B0A52C852A84AAB4A6B4A4A422A422A42093A0931E831C831A829A329A229A229822963296329622962296221622941
+FRAME_DATA 002944 21412942294229412941294129412141214121212941216121612941294121412141214129412942214221412942214129622961296129812981318231833183
+FRAME_DATA 003008 31A331A339C339C339C339C839E839E33A0339E83A084208420842084208420942093A093A09420842093A483A28422A422A4229422942294229422942294229
+FRAME_DATA 003072 4229422942294229422942294229422942293A2942293A2942293A0A3A0A3A293A293A293A293A293A4A42294229422A422A3A29424A422A422A424A424A4269
+FRAME_DATA 003136 426A428A428B428B428B428B428B4A8B4A8B42AA4ACA42CB42CB4ACB4ACB4AC84AE84AE84AE842EB42CB42AA42AA428A426A3A6A3A693A4A3A493A293A0831E8
+FRAME_DATA 003200 214100000000000000004A195ABB5B2A53094AC84AAB4A6B4A6B424A422A42093A0939E831C831A331A32983298329A329A32963296329622962296129612962
+FRAME_DATA 003264 214221412161294129412942294229422942294129412961296129412941214221422941294129412941294129412941296129422962296229623182318231A2
+FRAME_DATA 003328 31A331A331A331A331C839C839C839E339E339E83A0841E842093A0842283A283A283A293A294209420942294229422942294249424942294229424942294249
+FRAME_DATA 003392 4249422942494249424942494229422942293A2A3A2A4229424942293A293A493A493A493A493A2A3A4A422A422A424A3A293A4A424A422B422B3A6A426B426A
+FRAME_DATA 003456 426A428A428A428B428B428B4AAB42A842A84AAB4ACB42CB42EB4AEB4AEB4AE84AE84AE84AE842E842E842CB42AB428A428A428A426A3A6A3A4A3A493A283228
+FRAME_DATA 003520 2142000000000000000049F8629B5B0952E952A84A884A6B426B424A422A3A093A0939C831A831A331A331833183298229822962296229622962294229412942
+FRAME_DATA 003584 29422941294129412941294129412941294129412941294129412961296129412941214129422141214129422942214129412941296129622962298229823183
+FRAME_DATA 003648 31A331A331A331C331E339C841C839E339E339E839E842083A083A083A28420942093A283A284209420942294229424942493A493A4942494249422A422A4249
+FRAME_DATA 003712 424942493A29424A424A424A4249424A424A424A424A3A6A3A6A3A4A3A4A42494249424A426A424A424A424A424A424A424A3A693A69426A426A426B426B426B
+FRAME_DATA 003776 426B4A8A4A6A4A8B428B4AAB4AAB42A842A84ACB4ACB4ACB4ACB4B084AE84B084B084AE84AE84AE842C842CB42AB42AA42AA428A428A426A426A3A693A493A48
+FRAME_DATA 003840 2162000000000000000041F3529A5AE952C94AA84A88428A426A424942293A0839E831C831C331A329A331832983318231622963296329622962296129612962
+FRAME_DATA 003904 29422942294221412161294129412941294129612161294129412161216129422942294129412161214129412941294129412961296129622962298229823182
+FRAME_DATA 003968 318231A331C331C331C339C839C839E839E841E8420841E941E93A293A29422842284229422942294229422942294229424942494249424A424A424A424A4249
+FRAME_DATA 004032 3A494229424A424A424A424A424A426A426A4A6A4A6A4A6A4A6A428B428B428B428B4A8B4A8A4A6B4A6B426A426A426A426A424A426B426B426B426B428B428B
+FRAME_DATA 004096 428B428B428B4AAB4AAB42AB42CB4ACB4ACB42E842E84AE84AE84AE84B084B084B084B0B4B0B4AC84AE84ACB4ACB4AAB4AAB42AB42AA428A426A42693A693A49
+FRAME_DATA 004160 2162000000000000000041F2529952E94AE94AA84A884A6A424A3A493A283A0831E331C831A331A329A329A329A3298229822982298229622942296129412961
+FRAME_DATA 004224 29612941294129422942294229422961216129612961296129412942294229412961294129412941294129412941294229422142294229622962298229823182
+FRAME_DATA 004288 3182318331A339C339C331C839C839E33A083A033A03420842083A283A284208422942294229422942294229424942294229422942494A294A2942494249424A
+FRAME_DATA 004352 4229424A422A42694269428A426A4A8B4A8B4AAB4AA852A852A852AB52AB4AAB4AAB52CB52CB4AA84AA84AAB4AAB4A8A4A6A426B426B426A428B426B426B426B
+FRAME_DATA 004416 426B428B42AB4A8B4AA84AA84AA84AEB4ACB4AE84AE84AE84B084AE84AE84B084B084B084B084AE84B084AC84AC84ACB4AAB42AB428B42AA428A3A893A693A69
+FRAME_DATA 004480 2162000000000000000039D1527852E952A84AAB4A8B426B424A3A0A3A0931E831C331A331A33183318331822982318229622962296229622961296129612162
+FRAME_DATA 004544 21622942294221422142294129612962294129412941296229622941296229412941294121412941294129222942294129422941294229612961298229A23182
+FRAME_DATA 004608 318331A331A331A331C331C339E339E839E83A083A083A0842084209420942084229422942494228422842294229422A42294249424942494249424A422A422A
+FRAME_DATA 004672 424A424A424A426A4A8A4A8A4AAB4ACB52CB52C852E8530853084B084B0B52E852E85309530952E952E952E84AE84ACB4AAB4A8B428B426B428B426B428B426B
+FRAME_DATA 004736 428B4AAB4AAB4AA84AA84AA84AA84AC84AC84AE84AE84AE94B0952E94AE94B094B094B084B084B084B0B4B0942E84AC84AA84AAB42AB42AB42AB42AA3A89424A
+FRAME_DATA 004800 2962000000000000000039D0529352C84AA84A8B4A8B426A4229420939E831E831C331A331A331A3318329A22982296229622962296129422942314229422942
+FRAME_DATA 004864 29422941294129412941294129622961296129422942296229622941294129422942294129412941294129412941294129422942294229622962298229A23183
+FRAME_DATA 004928 31A33183318331A331A331C331E331E839E841E842083A083A0841E9420942294229422842284249424942284228422942494249424942494249424942494A49
+FRAME_DATA 004992 4A49426A4A6A4AAA4ACA52CB52C852E852E852E85308530953095308530952E85AE85B085B295B0A5B0953295308530952E952C84AAB4AAB428B4A8B4A8B428B
+FRAME_DATA 005056 4A884A8B4AAB4AAB4AAB4AA84AC84AE84AE852E952E94B084B084B084B094B094B094B094B094B094B0953084B084AE842EB4ACB42AA42CA42AA428A426A4249
+FRAME_DATA 005120 2962000000000000000039B0527352C84AAB4A8B4A6B424A422A3A0939C831C331C331A331A331A329A329822982298229823162296229622942216221622161
+FRAME_DATA 005184 21612941294129422942294129622962296229622962296229622961296121612961294229422161216129412941294229422962296229612961296231823182
+FRAME_DATA 005248 31823183318331A231C339C339C339C839C841E841E841E84209420842284229422942284248422942294249424942494249424942494A494A494249424A426A
+FRAME_DATA 005312 426A428A42AA52CB52C852E853085AE85B08532853285B295B295B085B0853295B295329532953295B495B495B295B2953295B2952E852CB4AAB4AA842884A88
+FRAME_DATA 005376 4A884A884AA84AA84AC84AC84AE94AE84B084B084B084B084B08530853094B284B284B29532953294B294B084B084328430842EB42EB42CA42AA428A42693A6A
+FRAME_DATA 005440 2963000000000000000039B0525352A84AAB4A8B426B422A42093A0831E331C331C331A329A33183318229822962298229622962296229622961296129612941
+FRAME_DATA 005504 29412941294129422942294129612962296229612961296129612962296229412941294129412942294229422942294229422962296229622962296229823182
+FRAME_DATA 005568 31823182398331A331A339C339C339C839C841C841E83A283A28420842084209420942494229424942494229424942494269424A424A4A494A49426942694A6A
+FRAME_DATA 005632 4A6A4A8B4AC852E852E8530853085B095B095B285B285B2A5B2A532953495B295B495B485B485B495B495B4A5B4A634A5B4A5B495B4953084AC84AC84AA84AAB
+FRAME_DATA 005696 4AAB4A8B4AA84AC84AC842C84AE84AE84AE84B084B084B094B09530853084B294B294B295349534953284B2943284B084AE84B0B42EB42CB42AB42AA428A3A69
+FRAME_DATA 005760 298300000000000000003990525252AB4AAB4A6B424A42293A0939E831C331A331A331A329A23183318329822982296229622962296229412941294229422961
+FRAME_DATA 005824 29612161216129622962296129612961296129612961296129412962296229622942296129612941294129412941296229622961296129612962296229823182
+FRAME_DATA 005888 3182318231A331A331A339A339C331C339E339C841E8420842083A0842284229422942294229422942294229422942494A49424942494A4A4A4A4A6A4A6A528A
+FRAME_DATA 005952 528B52AB5AC853085B085B285B2853295B295B495B495B2A5B2A634963495B4A5B6A5B6A5B6A5B8A5B695B6A5B6A5B6A5B6A5B6A5B6A5B49532952E84AC84AA8
+FRAME_DATA 006016 4AA84AA84AA84AC84AC842C84AE84AC94AE94B084B084B084B0853095329532A532A532A532A53295329530953094B084AE84B084AEB4AEB42CB42AB428A3A69
+FRAME_DATA 006080 29820000000000000000399052324AAB4A8B426A424A3A2939E839C831A831A331A331A229A22982298231622962296229622962294129412941294129412941
+FRAME_DATA 006144 29412961296129622962296129612962296229622962296229622962294229622962216229622941296129622942296229422962296229622962296131823182
+FRAME_DATA 006208 318331A231A231A231C339A339C339C339E339E839E8420842084208420842094209422842294229424942284249422942494A494A494A694A894A6A4A8B4AAB
+FRAME_DATA 006272 52CB5AC85AE95B295B295B295B295B295B295B695B6A5B8A5B8A6369636A636A636A63AA638A63AA5BA9636A636A638B638B638A5B8A636A634A53284AEB4AC8
+FRAME_DATA 006336 4AA84ACB4AC84AC84AC84AC84AC8430843084B084B085329532953295329530A532A532A532A534953494B494B294B284B084B084AC84AE842C842AB428A3A6A
+FRAME_DATA 006400 29A30000000000000000417052324AAB4A8B426A3A493A293A0831C331C331C331A3318331823182298229622962296129612962296229612961294129412942
+FRAME_DATA 006464 29622962296229622962296229622962296229622962296229822962296231622941296229622961296129612941294229622961296129612961298229823183
+FRAME_DATA 006528 31A331A331A331C331C339A339C339C339C339E339E3420842084209420942294229422942294229422942294229424A424A42494249426A4A6A4A8A52AB52EB
+FRAME_DATA 006592 530B5AE95B095B485B495B4A5B4A5B695B69638A636A6B8A6B6A6BAA6BAA63AA63CA6BCA6BCB6BCB6BAB63EA63CA63CB63CB63AB63AB638A638A5B6A53295308
+FRAME_DATA 006656 4ACB4AC84AC84AA84AA84AC952E94B084B08530953094B0A532A53295329532A532A534953495349534953294B294B294B294B084B084AE84AC842A83A8B3A69
+FRAME_DATA 006720 29A30000000000000000399352324AAB426B42493A293A0831E331C331A331A331A3318331822982296229622962296229622962296229412941294229422942
+FRAME_DATA 006784 29422941296229622962296229623142314229622962296229622982296229622962296129612962296229422942214129622941296229613181298229822982
+FRAME_DATA 006848 318331A231A231A231A239A339C339E339E339E33A033A08420842084228422942294229422A4248424842494229424A424A42694249428A428A528B52AB5AE8
+FRAME_DATA 006912 5B085B095B295B485B69636A636A638A638A6B8B6BAB6BCB6BCB73CB7BCB73F070107030701070117011680B680B6BF06BD06BD06BD063CB63AB638A5B4A5309
+FRAME_DATA 006976 4AE84AC84AC842C84AC84AC94AE952E852E953095309532953295329532953295329534A534A534A532A5329532953294B294B084B084AE84AE842CB42AB3A6A
+FRAME_DATA 007040 29A3000000000000000039924A514AAB428A422A4209320831E831C331C331A331A3298329822962296229612961296129612961296129422942216221612961
+FRAME_DATA 007104 29612961296129612961296229622982296229822982296229622981298129622962296229622962296129622962294229422961296229622962316231623181
+FRAME_DATA 007168 31813182318331A231C239A339C339C339C339E839E83A083A084208422842294229420A422A424942494249424A424942494A694269426A4A8A4AAB52C85B08
+FRAME_DATA 007232 5B085B295B495B6A636A638A63AA6BB06BD06BD06BEB73EB70107810781078317831785178517851785170517051783170306BF16BF16BF063D06BAB638A5B49
+FRAME_DATA 007296 53284AE94AC84AC84AE84AE94AE952E952E94B095329532953295329534A53495349534A534A534A532A532953295329532953094AE84AE84AC84ACB428B426A
+FRAME_DATA 007360 31A30000000000000000399352314A8A42694A2942083A0331E331A331A331A33183318329632982298229622962294229422941294129422942296129412961
+FRAME_DATA 007424 29612961296129612961296229622962296231623162296229623162316231623162296229622962296229612962296229622961296229622962296229822982
+FRAME_DATA 007488 298231A331A331A331A331A339C339C339E33A033A083A093A0942084229422842284229424A424A424A4A494A49426942694A6A4A6A4A6A4AAB52AB5AE86309
+FRAME_DATA 007552 6309632A634A5B8A638A738A73AB73F073F07010701078107830781178317850785078717871807280727871787178727852783178306851601063EB63CB5BAA
+FRAME_DATA 007616 534852E94AE94AE84AE852E852E8530853084B0853285309532A534A534A5349534953495369532A532A53295329532853284B284B084AEB4ACB4AAB42AB428B
+FRAME_DATA 007680 31C30000000000000000397352114A6A424942293A0839E839C339A331A331A331A3318229822962296229612961296229622942294229422942294229622941
+FRAME_DATA 007744 29412962296229612961296229823162296229623182298129812962298229622962298229622962296229612961294129622962296229612962296229622982
+FRAME_DATA 007808 31823182318231A331A339C339C339E839E839E83A08420842083A0942294228422842494249424942494A694A69426A426A4A694A694A8B52A85AE85AE86309
+FRAME_DATA 007872 63296349636A638A63CB73EB7010781078107031703178507850785178717871809280928092809380928092807280728092789278927871705168106BF06BAB
+FRAME_DATA 007936 5B6A53294B0852E852E84AE94B094B094B0953095309532953295329532953295349534A5B4A5349532953494B4953294B2953084AEB4AE84AC842C842CB42AA
+FRAME_DATA 008000 31C8000000000000000039724A114A6A424A422839E839C339C331C331A331823182298229822962296229612961296229622942294229412941296229422941
+FRAME_DATA 008064 29412962296229612961296229622963296329622962296229622982298229622962296229622961296129622962296129612962296229622962296229832982
+FRAME_DATA 008128 298231823183318339A339C339C839E339E839E33A083A083A083A09422942284249424942494A494A49424942494A4A4A4A4A4A4A6A4A8B52C85B085B286329
+FRAME_DATA 008192 634963696B8A6BAB73EB700B7030703078507850787178927892807280728072889380D280D280D388D388B3809380D280D280D380B380938092785270116BF0
+FRAME_DATA 008256 638B5B4A532952E952E852E952E94B094B094B2A4B2A53295329532953295349534953695369534A532A53295329532953294B094B084AE84ACB4ACB42CB426B
+FRAME_DATA 008320 31C3000000000000000039724A104A6A422A3A0939E831E331C331C331A231A329A2298229822962296229622961216121612941296129412941296129612961
+FRAME_DATA 008384 29612962296229622962296229622962296229613162296229823161316131623162298229622962296129622962296129612161296129622962298229823162
+FRAME_DATA 008448 31623182318231A331A339C339C339E339E839E83A09420842084209420A42284248424942494A2A4A4A424942494A4A4A4A4A694A8A4AAB52E85B085B286349
+FRAME_DATA 008512 6369638A6BCB73F07BF0703078307831785180518071809280B380B388B380B388D388F288F388F088F0891380F388D088D080F380F380D380D3809278517011
+FRAME_DATA 008576 6BD0638B5B29530952E952E952E952E953094B0A4B2A53295329532A534A5329534953495349532A532A53295329532853084B2B4B2B4B0842EB42C842C842AB
+FRAME_DATA 008640 31E3000000000000000039724A104A6942293A0839E831C831C331A331A331833183296129612961296129612961216121612942294221612161214229422961
+FRAME_DATA 008704 29612962296229622962314231422981298129822982298229812962316229622962318229612962296229612961296229622962296229622962296229823182
+FRAME_DATA 008768 31823183318331A331A339C339C339C839C83208320841E8420842294229422942294A294A494A494A49426942694A494A4A4A4A526A52AB5AE85B285B485B69
+FRAME_DATA 008832 638A6B8A73AB701070107050705080718071809188B180B388D088F089108910891091109931913091509151893091339113813381338910891088F380D27852
+FRAME_DATA 008896 701063AB5B4A4B294B284B094B0952E9530A5309532953095B29532A532A534A534A53495329532953294B494B49532953284B084B084AE84AC842EB42CB42AB
+FRAME_DATA 008960 31C80000000000000000397249F04A4A42293A0831E831C331C331A331A331A32982298229622962296229622961296129412942294229612941296229622161
+FRAME_DATA 009024 29613141316129612961296229622982298231623182296129612982298229622962296229622962296229622962296229622961296129622962316231622982
+FRAME_DATA 009088 31823183318331A331A331C339C339E339E33208322842084209422942294229422942294249424942494A494A49424A4A6A4A6A528A52EB5B285B09634A636A
+FRAME_DATA 009152 6B8A73CA73EB7810781078318051809188B288D290D3911391309133913391719171997199719971997199729972997199519150913090F190F188F088F08070
+FRAME_DATA 009216 78536BF05B6B532953094B094B0952E952E9530A530A532A532A534A5329532A532A532A53294B2A4B2A4B4A4B4A532953094B084AE84AE84AE842CB42CB42AB
+FRAME_DATA 009280 31C80000000000000000315241F0424A3A0939E831E831E331C331A331A331832982298229822962296129622962294129412161216129422942296129612962
+FRAME_DATA 009344 29622962296229622962316131613162296229822982296229622982298229812961296129612962296229622962296229622962296229612961316231623182
+FRAME_DATA 009408 31823183398331A331A331C331C339E339E33A0842084208420842294229422942294249424942494249424A42494A4A4A4A4A6A528A52C85B095B4863696B6A
+FRAME_DATA 009472 6BAB73EB780B781080318051887288B290D389109130913199519951995199709990999199B1A1B2A1D2A1D2A1D2A193A193A1929972995191518950893088D0
+FRAME_DATA 009536 80927031638B534953295309530952E953094B294B294B295329532A532A534A534A532A532A5309530953295329530953094B0A4AE94AE84AC84AA84AA842CB
+FRAME_DATA 009600 31E80000000000000000395149D3422A3A0939E831E331C331C331A331A329A22982298229822961296129622962296229622941294129412941294229422961
+FRAME_DATA 009664 29612961296129622962296229622962296229622962296229622962296231612961296129612962296229622962296229612962296229622962316231623162
+FRAME_DATA 009728 31823183318331A331A231C339C339E339E33A033A084208420842094229422942294229424942494A494A4A4A4A4269426A4A6A4AAA52E85B29634863696B8A
+FRAME_DATA 009792 73CB7BEA780B80118051809188B288F39113915091719970997199919991A192A192A1B2A1D2A1D3A9D3A9F3A1F3A9D2A9D2A1F3A1F3A1B2A19291B189718911
+FRAME_DATA 009856 88F0785263B0536A4B4952E94AE952E9530953095329530A532A532A532A532A532A5B2A530A532953294B294B29530953094B094B094AE84AE84AC94AA84AAB
+FRAME_DATA 009920 31E30000000000000000315049D342293A0839E339E331C831C831A231A231822982316229622982296229612961294229622941294129422942294129412942
+FRAME_DATA 009984 29422962296229612961296129622962296229622962296229622962296229622962296229622962296229622962296229622962296229612962298129823182
+FRAME_DATA 010048 318231A231A331A339A339A339C339C839E83A083A083A283A284229422942294A2942484248424942494A4A4A4A4A694A694A6B528B52E85B0863296B6A6BCB
+FRAME_DATA 010112 73EB701078308051887280D289139113913099519971A191A1B1A1D299D2A1D3A1D3A9F3A9F3A9F3AA13AA13AA18A218A238AA18AA13AA13A9F3A1D399929951
+FRAME_DATA 010176 911080936BF15B6A5B2953094B0952E952EA4B09532953295329530A532A532A5329532A532A4B295329532A530A4B0A4B0A4B094B094AE84AC84AC84AC84AC8
+FRAME_DATA 010240 39E80000000000000000315049D23A293A0839E839C831C331A331C229A229A32982296229622982298229612961294129412961296129422941294129622961
+FRAME_DATA 010304 29612962296229422942296229622962296229622962296229622962296229622962296229622961296129622962296129612961296129623162298229823183
+FRAME_DATA 010368 318331A331A331A331C339A339A339C841E839E839E83A083A2842283A0842294229422942294A49424942494249424A426A428A4AAB5AE85B08634A6B8B73EB
+FRAME_DATA 010432 701078308071807288B288F09130993399309951A172A1B1A1D2A1F3AA13AA13AA13AA33AA33AA58AA58B258B258B238B238B239B219AA18AA18AA33A1F2A193
+FRAME_DATA 010496 995280F0703163AB534A5309530952E952E953095309530A530A5329534A534953294B29532A53295329532A532A4B2A4B094B094B094B084AEB4AE842C842A8
+FRAME_DATA 010560 31E80000000000000000315041D23A0839E831E831C831C331C331A329A329832982296329622962296229612961294129612961296129612961294229422961
+FRAME_DATA 010624 29612961296129612941296229622962316229622962296229622962296229622962296229622962296229612961296229822961296131623162298129813181
+FRAME_DATA 010688 398231A231C231A231A239C339C339E339E339E839E842084208420941E9422842284209420942494229422942294249424942694A8A52E85B2963696BAA7BEA
+FRAME_DATA 010752 780B7851809288B390D391109910995099709972A192A9D3A9F3AA13B258BA38BA38B258B278B279B279B299B299B27AB27AB25AB25AAA59AA59B258AA13A1F2
+FRAME_DATA 010816 99B0913078716BCB5B6A532A530A52E952E953095309532953295B0A5B2A532953294B494B28530953094B2A4B2A4B294B294B094B094B0B430B4AE842C842C8
+FRAME_DATA 010880 39E90000000000000000313039B23A0939C831E331E331C331C331A3318229832962296229622961296129612961296229622161296129612961296129612961
+FRAME_DATA 010944 29612961296129622942296129612162296229622962296229622962296231423142296229622962296229622962296229622962298229622962316231623183
+FRAME_DATA 011008 318331C331C331A331C331C339C339E339E339E841E939E8420842084208422842283A294229422942294229422942494249426A4A8B52E85B2A638A6BCB7BEB
+FRAME_DATA 011072 7830807188B290D390F099309951A170A191A1B1A9F2AA33AA58BA58BA79BA99BA99BAB9BAB9BAB9BABAC2B9C2B9BADAB2BABA99BA99B27AB27AAA59AA59AA18
+FRAME_DATA 011136 A1D29152789368105B8A5B4A532A5309530953095309532A532A532953294B494B494B294B2953294B294B2A4B2A53094B0952E952E94B084AE84AE842C84AC8
+FRAME_DATA 011200 3A090000000000000000313039B13A0831E831C331C331C331A329A229A229822962298229622961296129622962216221622961296129612941296121612942
+FRAME_DATA 011264 29422962296229622962296129612961296229622962296129612962296229622962296129622982296129622962296229623162316231623162316231633182
+FRAME_DATA 011328 318231A331A331C331C339C339C339C839E839E839E839E83A093A0842283A293A29422942294229422942294229424942494A6A4A8A52E85B29638A6BCB7810
+FRAME_DATA 011392 8031887290B3911091309970A190A971A992A212AA33AA58B298BA7AC2BAC2BAC2BAC2BAC2BABAFAC2FBC2FBC2FBCADBCADAC2BBBABBBABAB2BAB27AB27AB258
+FRAME_DATA 011456 AA13999280D3703163AB536A534A4B4A4B29532A532A532A530A4B095309530A530A532A532A532953294B0953294B2A4B2A53094B094AE94AE94AE94AC94AEB
+FRAME_DATA 011520 39E90000000000000000314B41B13A0831E331C831C831C331A33183298329822982296229622942294229622962216121612942294229612961294229422941
+FRAME_DATA 011584 29412962296229622962296129612961296129622962296129612962296229622962296229622962296229622962296229822962316229822981318231823182
+FRAME_DATA 011648 318331A231A339C339C331C339E839C839C839E339E339C841E9420842283A293A2942294229422942494A294A29422942494A6A4A8B52E85B496B8B73F07810
+FRAME_DATA 011712 807188B290D3993099509991A1B1A9D2A9F2B213B258BA79BA99BAB9C2DAC2DBCADBCADBCADBC31ACB3AC33BC35BCAFBD31BC31BC31BC2F8BADBB2BAB2BABA59
+FRAME_DATA 011776 B239A1B2891378516BAB5B6A534A53495329532B530A53294B09532A4B09530A530A53295329532A53294B294B294B0A4B0A4B0A4B0A4AE94AE94B0842E84AC8
+FRAME_DATA 011840 3A090000000000000000292B39B139E839C831E331C331A331A329A329A329822962296229622961296129622962294129412961296129412942296129612941
+FRAME_DATA 011904 29412962296229622962296229612942294229622962296129612961296129612961296231622962296229612962296229622962296229622962316231623183
+FRAME_DATA 011968 318331A339A339A339A339A339C339C839C839E839E841E841E8420842084229422942294229422A422A422842284A49424942694A8A52C85B296BAB7BF08030
+FRAME_DATA 012032 887190D298F39910A171A1B1A9D2B212B252BA58BA78B299BABAC2BAC2DBC2FBC2FBD2D8D2F8CB3BCB58CB58C358D33BD33BCB38CB38CB18CB18BAFBBADBBA9A
+FRAME_DATA 012096 B259A1D3891178726BF05B8B5B6A534A5329532A4B29530A52EA4B294B294B294B294B494B49532953294B294B294B294B294B094B084AE94AE94AE94AE842C8
+FRAME_DATA 012160 3A290000000000000000312B399039E831E831C331C329A329A33182298229822982296229622962296229622961296129612961296129412941294129412941
+FRAME_DATA 012224 29422962296229622162296229422942294229622962296129612961296129622961294229622961296129622962296229622962296229822982296331833182
+FRAME_DATA 012288 31A231A231A239A339A331C339C839C841E839E33A083A083A08420842083A293A294229422942293A29422842484A2A4A2A4A6A4A8A52C8634A73AB7BF08051
+FRAME_DATA 012352 88B290D399109950A191A9F1AA12BA18C239BA78BA98C2B9C2D9CADACAFBC33AC33ACB38D338CB5BD358D379D379D358D358CB58D378CB59CB59CB3BC2FBBABB
+FRAME_DATA 012416 B27AA9F3917180B36BF0638A5B6953495329532A532A532A4B294B294B294B29532953294B29532A532A4B294B294B2A4B0A4B0A4B0A4AE94AE94AE842E84AC8
+FRAME_DATA 012480 3A290000000000000000310A399039C839C331C331C331A331822983298329822962296229622941294121612161296129612161216129412941294129412941
+FRAME_DATA 012544 29412962296229622962296129612961296129612962296229622961296129622962296229622942294229423142298229822962298231623162318231823182
+FRAME_DATA 012608 318231A231A231A331A839C339C339E839E841E841E83A233A034203420342084209422942293A29422942294249424942494A4A528B52C85B4A73CB78108071
+FRAME_DATA 012672 88D390F09931A173A9B8AA13B238BA38BA78C27AC29ACAD9CAFACB3AD35AD378CB58D378D378D399D3BAD3B8D3B8D398D398CB99CB99CB99CB79CB79CB59C31B
+FRAME_DATA 012736 B2BAA9F8997280D068115BAB536A532A4B2A532A532A4B2A4B2A4B294B294B294B29530A532A532A53294B2A4B2A4B294B2953094B094AE94AE94AE942E842C8
+FRAME_DATA 012800 3A2A0000000000000000292A399039E831C831C331A331A329A23183298229832983296229622962294229412941294129412942294221422162294229422942
+FRAME_DATA 012864 29422942294229622962296129612962296229622942296229622962296229622942296229622962296229612961296129612962296229822982318231823182
+FRAME_DATA 012928 31A331A231A331C331C339C339C839C839E839E33A033A083A083A083A0842094209420842094229422942294249424842694A4A4A8B4ACB5B4973CB78318872
+FRAME_DATA 012992 90D391309971A973B1D8B218BA38BA79C299C2BACAFBD2FBD31BD378D398DB99E399E39AE39AE3BAE3BAE3DAE3DADBBBDBBBDBBAD39AD399D379D33AD33AC318
+FRAME_DATA 013056 B2BAAA13999188D0703163905B4B532A5329532A532A530A532A4B2A4B294B294B294B2A4B4A530953094B2A4B2A4B294B294B094B094B094AE84AE942C842C9
+FRAME_DATA 013120 3A2A0000000000000000292A31B039E839C331C331A331A331833183296329622962296229622961216121612141294121412941294121422142294129412142
+FRAME_DATA 013184 29422962296229622962296229622961296129622942296129612962296229622962296129622962296229612961314231622962296229822982298229823182
+FRAME_DATA 013248 318331A331A331A331C331C331C339C339E839E839E839E839E83A093A093A083A0842084208422942294229424942494A494A6A528A52CB5B296BD0785288B2
+FRAME_DATA 013312 90F39950A191B1B2B1F3B238BA79C2BAC2DACADACAFADB38DB58DB98DBB9E3BAE3DAE3BAE3DAE3DAE3FBE3FBE3FBEBFBEBDBE3BBDBBBDB9AD379D379CB59C339
+FRAME_DATA 013376 B2BBAA3999B38910703163905B4B534A4B2A532A532A532A532A532A4B2A532953294B2A4B2A4B294B29530953094B294B294B094B094AE94AE94AE942C842C8
+FRAME_DATA 013440 3A2A0000000000000000292A399039E331C331C331C331A331833163316329622962296229622942294229412941294129412141214121412141294129412942
+FRAME_DATA 013504 2942296229412962296229622962296229622961296129422942294129622962296229622962294229422961296129622962296229632962298229A229A23183
+FRAME_DATA 013568 318331A331A331A331C331C331C339C839C839E839E839E839E83A083A093A033A03420842084229422952085229424942494A6A4A8A52A85B0A6BAB803180B3
+FRAME_DATA 013632 91109951A9B3B1D3BA18BA78C299C2FAC2FAD31ADB3BDB98DB98E39AE3BAE3DBE3FBEBFBEBFBEBFAEBFAEBFBEBFBEBFBEBFBE3FBE3FBE3FBDBDAD399CB79BB38
+FRAME_DATA 013696 B2DBB259A1D38931707263D05B8B534A532A4B494B49534A5329532A532A532A532A53294B294B2A4B2A530A530A4B2A4B094B094B094B094AE942E942E94AC8
+FRAME_DATA 013760 3A2A00000000000000002909398B39E331E331C331A331A331833183316229822962296229622942294229612141294129422141214121412161294129412961
+FRAME_DATA 013824 29612942294229612961294229422942296229612961294229622941294129413141296129612961296129622962296229622962296231623182318231823182
+FRAME_DATA 013888 31A2318331A331A331A331C331C331E331E339C839E839E339E339E839E841E841E83A233A0842084229424842284249426942494A8A52AB5B086B6B78318892
+FRAME_DATA 013952 98F0A191A9F3B213BA58C299CABACAFBD31BD338DB79DB99E39AE3DAEBDAEBFBEBFBF3FBF3FBEBFBEBFBEBFBEBFBF3FBF3FBEBFBEBFBEBFBE3DBD3DAC399CB18
+FRAME_DATA 014016 BADBB299A2139152787363D15B6B534A534A532A532A534A534A532A532A532A532A4B2A4B2A4B294B294B2A4B2A4B094B094B294B094AE94AE942E942E942E8
+FRAME_DATA 014080 3A2A0000000000000000292A39B031E831C831C829C331A331833183318329622962296229622941294121412141214221422941294129412141214121412941
+FRAME_DATA 014144 29412942294229612961294229422942294229612941296129612941296229412941296229622942296229622962296129612962296229823182316231622983
+FRAME_DATA 014208 318331A331A331A331A339A339C339E339E339E339E339E339E339E339E341E841E83A083A284209422942284228424942494A494A6A4A8B5308636A783088B3
+FRAME_DATA 014272 9931A1B1A9F2BA38BA59C2BACAFBD33BD35BDB78E398E3B9E3DAEBFAEBFAF3FBF3FBF3FBF3FBF3FBF3FBF3FBF3FBF3FBF3FBF3FBF3FBEBFBE3FBE3DAD379C318
+FRAME_DATA 014336 C2FBBA9AAA18917278B26BD15B70534B532A532A534A534A4B49534A532A4B2A532A4B2A4B2A4B2A4B2A4B4A4B294B294B294B094B094B0942E942E842E84AE8
+FRAME_DATA 014400 3A2A0000000000000000290939AB39E831C831C331C331A331832983298331633163296229622962296221422142294129412941294129422942294229422141
+FRAME_DATA 014464 29412941294129412962296129612961296129422942294129412942294229222922294229622962296229623162296229622962316229623162296229833183
+FRAME_DATA 014528 318331A231A331C331C331C331C339C331C339C339E331E331E339E339E841C341E342084208420942293A2942494229424A4269428A4AAA52EB636A78108873
+FRAME_DATA 014592 9911A972B9B8BA39C27ACADBD318DB18DB59E399E3B9EBBBEBDBEBFBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBF3FBF3FBEBFBEBFBDBFBD3BAD359
+FRAME_DATA 014656 CAFBBABBAA39919278B368115B8B536A534A534A5329532A532A4B4953494B6A4B494B2A4B2A4B294B294B4A43494B294B094B094B094AEA42E94AE94AE94AC8
+FRAME_DATA 014720 422A0000000000000000290939B039C839C831C331C331A331832983298329822962296229622161216129612961216129612941294129422942294229422941
+FRAME_DATA 014784 29412141216129412941214229422942294229422942294129412961296129422942294229422942296229623142296229622982298229822962298231823182
+FRAME_DATA 014848 318231C231C231A331C331A331A331C331C331C339C331C331E339C839C839E839E841E342083A283A28420942294229424A426A426A4AAA52EB634A78118092
+FRAME_DATA 014912 9110A192B1F8BA59C29AD31AD33BDB59DB99E399EBBAEBBBEBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBEBFBE3FBDBFBD3BBCB99
+FRAME_DATA 014976 C338BAB8AA5A999280D368115B90536A534A4B4A4B4A534A532A534A534A534A5329532A532B4B2A4B294B294B294B2A432A4B094B094AE94AE94AC94AC942C8
+FRAME_DATA 015040 422A00000000000000002909398B39E831E831C831C331A331A229A3298229822962296229622962296229422941294229422942294221412141216121612941
+FRAME_DATA 015104 29412141214129422942214221422941294129422942294229422942296229412941294229422961296129422962296229622962298229622962318231823183
+FRAME_DATA 015168 3183318231A339A3398331A331A331C231C339A339A331C331E331E331E839E839E83A083A084208420842294229422942494A494A4A4A8B52CB5B2A73F18872
+FRAME_DATA 015232 98F09991AA13BA79C2DACB1BD358D379DBBAEBB9F3FAF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBEBFBEBFBDBDBDBBBD3B8
+FRAME_DATA 015296 CB98C2D8B259999380D068115B8B5B4B532A4B4A534A534A534A534A534A532A534A534B532A530A530A4B494B494B2A4B0A4B094B094309430942E942E942C8
+FRAME_DATA 015360 3A290000000000000000292A398B39E831E831C831C831A331A329A2298229622962296229622962296229612961294229422942214229412141294229422941
+FRAME_DATA 015424 29412141214129422942214221422941294129412941216121412942294229422942294129622962296229612961296229623162316229622962298229823182
+FRAME_DATA 015488 318231A231A231A331A3318331A331C331C331A331A831C331C339C339E339C839E839E83A083A0842083A2942294248424842494A494A6B52A85B2973F08872
+FRAME_DATA 015552 98F09991A9F3BA58CABADAFBE338E399EBBAE3FAEBFAFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBE3FBE3FBDBFBDBDACBDA
+FRAME_DATA 015616 CBB9C338AAB999B388F07031638B5B6B534B4B4A4B4A534A534A4B6A4B6A534A534A532B532B4B2A4B2A532A4B0A4B2A4B2A4B2A4B094309430842E842E842E8
+FRAME_DATA 015680 3A4B00000000000000003109418B3A0331E331C331C331C331A231A2298229822982298229622962296229422942216121822961214129412941294121412161
+FRAME_DATA 015744 21612941214129412941294229422941294229422942294129412942294229422942296129612962296229622961296229622962296229622962298229823182
+FRAME_DATA 015808 318231823183318231A331A231A231A331A331A331A331C331C339C339E339C839E839E839E83A083A0842283A2842294249422A4A4A428A4ACB632A73D08072
+FRAME_DATA 015872 98F0A171A9D3BA39CA9ACAFBDB59EB99EBBAF3FBF3FBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBEBFBE3FBDBFBDBDADB9A
+FRAME_DATA 015936 D37ACB38B299A1B888F1703263D0538A536A534A534A4B4A4B4B4B4A536A534A534A532A532A4B2A4B2A4B2A4B2A4B294B294B0A4B0A4309430842E942C942C8
+FRAME_DATA 016000 3A4A00000000000000002929398B39E839E831C831C831A331A33183316331632962296229622962296129622962218221822162214129412941294229422941
+FRAME_DATA 016064 29412142214221412141294229422941294129422942294229422941294129412941294129622962296229612962296229822962296229622962298229822982
+FRAME_DATA 016128 2982298229A23182318331A231A2318331A331A331A331A331C339C339C339C339C339E839E842083A033A084228422942294229424A4A6A52AB5B0973AB8052
+FRAME_DATA 016192 90F0A171B1D2BA38C299CADBD338DB99E3DAF3DBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBF3FBEBFBE3FBDBFADBBB
+FRAME_DATA 016256 D39BCB18BA9AA1D888F168525BB05B6B534A53495349534B532A532B534B4B4B4B2B534A4B2A530953094B2A4B2A530A530A4B2943094309430842C842C842A9
+FRAME_DATA 016320 3A4A0000000000000000292A399039E839E831E331C331C331A23183298329822982296229622961296129622962296229622942294229422942294229422941
+FRAME_DATA 016384 29412941294129412941294121412142214221422142294229422942294229412941294229422962296129612961296229622962296229822982316231622962
+FRAME_DATA 016448 2962298329833183318331823182318231A331A331A331A339C331C331C339C339C839E839E83A083A083A293A2942294229424942494A8A4AAA53096BAB7852
+FRAME_DATA 016512 90F0A170B1D2BA53C299D2DBDB18DB5AEB9BEBBBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBF3FBF3FBEBFBE3FBD3DA
+FRAME_DATA 016576 CB99CAF8BA9AA9D88911703263B05B6B534A532A534A4B4A4B4A534A534B534A4B2A4B4A4B4A4B4A4B2A4B2A4B094B294B294B094B09430942E942E942E942A8
+FRAME_DATA 016640 422A00000000000000003109418B3A0839E339E831C831C331C331A229A231622962298229612962296229422942296229622942294229422942294129412942
+FRAME_DATA 016704 29422142216229422942294229412942294229422942294229422942294229412941296129612962296229612961296229622961296129622962316231623182
+FRAME_DATA 016768 318229823182318231A23183318331A231A231A331A331A231C331C331C339C339E339E839E83A0342084208420842294229422942494A6A528B5B096BAB7851
+FRAME_DATA 016832 90F0A171B1F3BA59C27ACADBDB18E339EB7AEBBAEBDAF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBE3FBE3FBDBBB
+FRAME_DATA 016896 CB5ABB3BB2B9A9F88910705363B0538A536A532A4B2A532B534B4B6A4B6A534A534A4B6A4B4A4B494B294B2A4B2A4B094B094B0943094AE94AE942E942E942C8
+FRAME_DATA 016960 3A4A0000000000000000292A39B03A0839E831E831E831C331C331A3318231823162298229822961296129622942296229622961296229422942294229422942
+FRAME_DATA 017024 29422142214229422142294129412941294129422942294129412942294229612961296229622943294229422962296229623162316229822982296229622962
+FRAME_DATA 017088 29623162316229823182318231A231A231A231A231A231A239C331C339C339C339C339E339E33A083A083A083A083A283A28424842494A6A528A5AE96B8B8032
+FRAME_DATA 017152 90B09971A9F3C259CA9ACAFBD338E379EB9AEBDBEBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBEBFBE3FBDBBB
+FRAME_DATA 017216 CB7ACB1BBA99A2188931703263B05B6A534A532A532A4B4A4B4A534A534A4B4A536A534A4B2A4B2B4B2A4B494B494B494B2943294B29430943094AE84AE842E9
+FRAME_DATA 017280 3A2A0000000000000000292A39B03A083A0839E339E331C331A231A3318329822982298229622962296229622962296229622941294129412942294129412142
+FRAME_DATA 017344 21422142214229412941294129212141294229412941294229422141294129612961294229422961296129622962296229622962296229622962298229622961
+FRAME_DATA 017408 298229822982316331833183318331A231A231A231A231A331A339A339A331C839C839E339E33A083A0841E84208422942294229424A4A6A4AAB52E86B8A7851
+FRAME_DATA 017472 88D39951A9D3B258C2DAD31BDB58DB99E3DAEBFAEBFAF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBEBFBE3FBE3BB
+FRAME_DATA 017536 D37ACB19BA9BA9D99112785263B05B8A534A532A532A532953294B6A4B4A534A534A532B532A4B4A4B4A4B295329532A4B2A4B4A4B4A4B2A4B0A4B094B094329
+FRAME_DATA 017600 3A2A0000000000000000292A39B0420839E839E839E339C339A331A331A329A229A2316231622962296229622962294229422962296229612161216221412942
+FRAME_DATA 017664 29422941214121412141294229422142214229422942294229422941294121612961294229422962296229622962296229622962296229622962296229622962
+FRAME_DATA 017728 29622962296229822983318231823182398331A331A331A231A239A339A339C839C839C839C839E839E83A0842293A294229424942494A4A4A8B5AC86B6A7832
+FRAME_DATA 017792 88D09951A1B3B238C29AD2FBDB38E399EBDAEBFBEBFBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBEBFBE3FBDBBB
+FRAME_DATA 017856 D39ACB19BABBA1F8895170725BD05B6A534A4B4A4B4A532B532B532A534A534A534A534A534A534B4B2A4B2A532A4B4A4B49532A4B2A4B2A4B294B0A4B2A4B29
+FRAME_DATA 017920 3A2A0000000000000000312A41B03A0839E839E839E839C331C331C331A331823182316231622982296229622962296229622942294229612961294229422941
+FRAME_DATA 017984 29412942294229412941214121412141214129412941214129422942294229412962294229622942294229622962296229622941296129622962296229622961
+FRAME_DATA 018048 2982316231623162318231833183318231A331A331A231A331A331C331C339C339C339C839C83A033A083A083A084209422942294229426A4AAA5AE86B6A7830
+FRAME_DATA 018112 88B39951A9B2B218BA79CAD8D339E399EBDAEBFBEBFBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBE3FBE3FBDBBB
+FRAME_DATA 018176 D39BD33ABA9BAA188931707263D05B6A5349532A4B2A534A534A4B4A536A534B534B534A534A4B4A4B4A4B4A534A53294B495329532A4B2A4B0A4B294B294B09
+FRAME_DATA 018240 424B0000000000000000312A41B03A083A083A0839E331E331C331A331A331832983298229822982298229822962296129612962294129612961294129412941
+FRAME_DATA 018304 29412141214121412141214121412142214229412941214229422942294221622162296129622942294229622962296229622961296229822961316229622962
+FRAME_DATA 018368 296229622982298231823182318231A331A331A331A231A339A331C231C239A339C339C339C339C839E83A033A084208420842294249426A4A8A5AC86B4A8010
+FRAME_DATA 018432 90929911A993B213BA78CABAD31BDB59EBBAF3DBF3FBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBE3FBE3FBE3DB
+FRAME_DATA 018496 DB9BCB19BAB8A9F89131785363B0538A534A532A532A534A534A534A534A536A536A534A53494B494B49532A532A4B494B494B294B29532A4B0A4B2A4B2A4B29
+FRAME_DATA 018560 428B0000000000000000312B41B142093A0839E339E831E831C831C331A231A33182298229823182316229822962316229612962296229612161296129612942
+FRAME_DATA 018624 29422942294229412941294129412141214129412942214121412941294129422942294129622962296229412941296229622962296229822982316231623163
+FRAME_DATA 018688 3163296231622982298231823182318231A231A331A331A331A331A331A339A339C339E339E339E839E83A083A0841E842083A483A4942694A8A52C8634A7BF0
+FRAME_DATA 018752 8892A111B172B9F3C259CA9BD2F8E339E35AE3DBEBFBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBEBFBE3FBE3DB
+FRAME_DATA 018816 DB9ACB38BABAAA189151707263F05B6B534A532A534A532A534A534A5B4A534B534B534A534A534A532A532953294B2A4B2A4B494B494B294B294B294B294B09
+FRAME_DATA 018880 426A0000000000000000312A41B0420841E83A0839E339C339C339A339A331A331A3318231823162296229822982296229622962296229422942296129612962
+FRAME_DATA 018944 21412941294121422142292129412141214129412941214129412941294129422942294229422941296129422942294129612961296129622962296131622962
+FRAME_DATA 019008 29622962296331623162318231823182318331A231A231A231C331A331A331C331C339C339C339C839E839E839E83A08420842094A2942494A6A52C8634A7810
+FRAME_DATA 019072 889290F1A173B218BA79CA9AD2DBDB1BE358DB9BE3BBEBFBF3FBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBFBFBFBFBF3FBEBFBEBFBE3FBE3DB
+FRAME_DATA 019136 D37AC2F8BA9AA2188951707163CB5B6B532A532A534A534A534B534A536A534B534B534A534A4B494B4953294B494B4A4B4A4B494B494B4A4B4A4B294B094B09
+FRAME_DATA 019200 4A6B0000000000000000312B41B1422842083A0839E839E339E339C231C231C331A331A231822982298229822982314231623162314229612961296229622942
+FRAME_DATA 019264 29422942294229412941294121412141214129422141214121412141294129422942294229422141296129622962314129412942296229622962296231622982
+FRAME_DATA 019328 2982298229822982298231623163318231833183318331A231A239A239A231C331C339A839C839C839E839E83A083A083A28422942294269428A52C8636A7BF0
+FRAME_DATA 019392 889298F0A151B1D8C25ACA9BD2DBDB18DB39E39BE3BBEBDBF3FBEBFBEBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBEBFBEBFBEBFBE3FBDBBB
+FRAME_DATA 019456 CB59C319B2BBA9F8913170725BD05B6A5B4A534A534A534A534A534A536A536B4B4A534A4B4A4B4A4B4A4B4A4B4A4B2A4B2A4B29532A4B2A4B2A4B2943294B09
+FRAME_DATA 019520 426B0000000000000000314A41B042283A283A083A0339E839E339C339A339C331A231A331823182318231623162316231422962296129422962296129412941
+FRAME_DATA 019584 29412161216129412941214221422941294121412141292129212942214129422942292229222142294229422942296229622942296229622962296229623162
+FRAME_DATA 019648 3162298329833162316231623162318231823182318231A231A2318339A339C339C331C839C839E339E339C839E83A0842293A283A28424A4A6A52C8636A73F0
+FRAME_DATA 019712 809298F3A151B1B2BA13C27BCAD8D319DB5AE39AE3BBE3DBE3FBEBFBEBFBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBF3FBF3FBEBFBE3BACBBA
+FRAME_DATA 019776 C379C31BB2B9A1D8891168335BB15B6B5B4A5B4A532A534A534A534B534A534A534A4B4A534A534A4B4A4B494B294B2A4B2A4B2A4B2A4B294B094B094B094B28
+FRAME_DATA 019840 426A0000000000000000312B41B142283A283A083A0339E339E339C339C339A331A331A231823183318331823182316231612961296129622941296229422941
+FRAME_DATA 019904 29412142214229412941294129412142214121412141294229212942214229422941294229422941296229422942298221622962296229622962296229622962
+FRAME_DATA 019968 2962296229823162316231623162318231823182318229A231A331A331A331A339A339A839A839C339C339E839E839E83A083A28422842494A6A52CB634A73F0
+FRAME_DATA 020032 807298D0A152A1D3B218C278CADAD2F9DB3ADB7AE3BBE3DBE3FBEBFBEBFBF3FBF3FBFBFBFBFBF3FBF3FBFBFBFBFBFBFBF3FBFBFBFBFBEBFBE3FBE3DBDBBACB7A
+FRAME_DATA 020096 CB5ABAFBB29AA1D38910703263B05B6B534A532A534B532B534B536A5349534A532A532A532A4B494B494B294B294B4A4B4A4B294B294B0A4B2A4B294B094B09
+FRAME_DATA 020160 426A0000000000000000313041B242283A28420341E339E339E339C339C331C331A331A331A23182318231823182316231622962296231423142296229422941
+FRAME_DATA 020224 29412941294129212941214121412941294121412141294129412941294129412941294129412961294129422962296229622962296231623162296229622962
+FRAME_DATA 020288 2962298229823162318231823182318231623163318331823182318331A331A331A331A339C339C339C339C841E83A083A084209420942494A6A52C8634A7BEB
+FRAME_DATA 020352 805088D09951A1B2A9F3BA39C29AD2D8DB19E35AEB9BEB9BEBDBEBFBEBFBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF3FBEBFBE3FBDB9BDB7BDB5A
+FRAME_DATA 020416 D319BADBAA59999380D0683163CB5B6B532A532B534B534A534A534A534A53695349532A53294B294B294B294B2A4B2A4B2A4B094B094B0A4B0A4B294B294B09
+FRAME_DATA 020480 424B0000000000000000392B49B142283A2841E841E839E339E339E339C339C331A331A331A331A2318229822982298229823162296231612961296221622941
+FRAME_DATA 020544 29622941294121422142214121412142214129422942214121412941294129412942294229422942294229422962296129412962296229622962296229623162
+FRAME_DATA 020608 316229822982298329822982318331823182318231823182316231A231A231A231A331A339A331C331E339C839E83A0842083A08422842494A6A52CB634973EB
+FRAME_DATA 020672 805090B3A110A993B1D8BA58C279CABBDAF8D379DB9AE3BBEBDBEBFBEBFBF3FBF3FBFBFBFBFBFBFBFBFBFBFBFBFBF3FBF3FBEBFBEBFBE3FBE3DBD3BBD39AD35A
+FRAME_DATA 020736 CB19BABBAA19999280D3681163AB534B532B5329534A534A534A534A5329534A532A4B494B294B294B094B0A4B2A4B094B094B294309432943294B094B0A4B09
+FRAME_DATA 020800 424B0000000000000000315041D242283A083A083A0341C839C839C339C339C331A331A231A23182318231A23182318231823162316231423142296129612962
+FRAME_DATA 020864 29422961294129422942214129412921294229422942214121612941294129422942294229422961296229612961294229423162296129622962296329633162
+FRAME_DATA 020928 31623162316231832962316231623182318231823182318231823182318231A231A231A339A331A831C839C839E839E83A083A09420942294A4952C8634A73CB
+FRAME_DATA 020992 803088929910A972B1D3BA38C279C2BBCAF8D31AD33ADB9ADBBBEBBBEBFBEBFBEBFBF3FBF3FBF3FBF3FBFBFBFBFBEBFBEBFBE3FBE3FBE3DBE3DBDBBBD39BCB99
+FRAME_DATA 021056 C338BABAAA18995380906BD16390534A532A4B494B49532A5B2A534A532A4B4A4B4A4B2A4B2A4B294B294B094B094B094B094B0942E94B094B09432943294B09
+FRAME_DATA 021120 426B0000000000000000315041B242293A083A083A083A0839E839E339C339C331A339A339A331A2318231823182318231822982298231623142296129612942
+FRAME_DATA 021184 29422941294129422942214121412941294129412141294129412941294129412942294129412941294129622962296229622962296229622962298229823162
+FRAME_DATA 021248 316231623162318231823182318231623182318331833182318231833183318331A331A331A331A331C339C339E339E839E83A093A0942294A4A52C8634A73CB
+FRAME_DATA 021312 8031889290F0A171A9D3B238BA59CA9ACADBCAF9D33ADB39E37AE39BEBBBE3FBE3FBE3FBE3FBEBFBEBFBEBFBEBFBE3FBE3FBE3FBE3DBE3DBE3BBDB9BDB7BD33A
+FRAME_DATA 021376 C2D9B27BA1F9915278926BD0636B534A532A4B2A4B2A532A532A532A532A530A53094B0A4B0A4B094B094B294B294B094B094AE94AE9430943094B094B094B09
+FRAME_DATA 021440 426A0000000000000000315041B242293A0941E841E83A033A0339E239C239C239C231A331A331A231A231823182318231822982298229622962296129612942
+FRAME_DATA 021504 29622941294129422942294121412941294129412941294129412142214229222942294129412942294229422962296229622962296229622982316231623162
+FRAME_DATA 021568 3162298229833182318229A229A23182318231823182298231A23183318331A231C231A331A831C331C331C339C33A083A0841E842093A29428A52A8632A73CA
+FRAME_DATA 021632 8030889290D39931A992B218BA59C29BCAB8CAF9CB19D339DB59DB7ADBBBE3DBE3DBDBBBE3DBEBDBEBFBE3FBE3FBE3FBE3FBE3DBE3DBE3BBE39BD39BD37ACAFA
+FRAME_DATA 021696 BAB9B25AA1D8915278736BD05B6B534A5309530A530A4B2A4B2A4B2A4B2A4B094B094B094B094AEA4AEA4B094B094B094AE94AE94AE94B094B094B0943094AE8
+FRAME_DATA 021760 424A0000000000000000315041D24229420941E839E839E339E339E331C239C331C231C331A23183318331823182318231623162316229622962296129623142
+FRAME_DATA 021824 31422942294221412941294129412941294129412941214121412141214229212942294129412942294229622962296229622961296229822982316231623162
+FRAME_DATA 021888 316231823182318231623182318231833183318231822983318331A331A331A231A239A339A339C339C339C339E339E839E84203420842294A6A52E8636A73CB
+FRAME_DATA 021952 7830889390D09930A191A9D8BA39BA9AC2BBC2F8CB18D31AD33ADB5ADB7ADB9BDBBBDB9BE3DBDBDBDBFBE3FBE3FBDBFBDBFBDBFBDBFBDBBBDB9BD39ACB58C2D9
+FRAME_DATA 022016 BA78B23AA1D8893170726BB15B4B532A53095309530953095309530A4B0A53094B094B094B094B094B094AE94B094B094AE9430943094B094B094AE94AE942E9
+FRAME_DATA 022080 426A0000000000000000395049D242293A093A083A0839E839C839C339C339C331A231A331A23182318231823182318131812982296129812961296129612941
+FRAME_DATA 022144 29412942294229422942294129412921292121412141294129412142214221412941294129412942294229622962296229622962296229622962316231623182
+FRAME_DATA 022208 31622982298231823182316231623183318331A231A229A229A231A231A231A331A331C331C339C339C331E839E839E339E83A08422842694A8A5AC86B4A6BCB
+FRAME_DATA 022272 7830809388F091309991A9B8B219BA5BC298CAD8CAF8CB19CB39D33BDB5BDB7BE39BDBBBDBDBDBFBDBFBE3BBE3DBE3DBDBBBD3DBD3DBDB9BD39BCB5AC319C2D8
+FRAME_DATA 022336 BA9BAA3999B388D1781263B05B4B4B2B4B0A530953094B094B0A4B0A4B094B09430942E94AE94AE94AE942E943094AE94AE94B0843084AE94AE94B0842E842E8
+FRAME_DATA 022400 426A0000000000000000395149D342293A0941E841E839E339E339E339C331C331A331A331A331A231A231823182318231822982296229612961316229622962
+FRAME_DATA 022464 29622942294229422142214129412941294129412941294121412941292121412141294129612942294229622962296229622962296229622962318231822982
+FRAME_DATA 022528 2982298229823182318231823182318231823183318331823183318331A331A331C331C331C339C339C339E839E839E839E84208422942494AAB5B086B6A73CB
+FRAME_DATA 022592 7810805390B098F1A152A1B8A9F9B25ABA9BC2B8CAD8CB18D339CB5AD37BDB7BDB5BE39BE3BBE3BBE3BBE3BBDBBBDBBBDBBBDBBBD39BD37BCB3BCAFAC2DAC2B8
+FRAME_DATA 022656 BA7BAA39919388D070116390532A4B2A4B0A4B094B094AE94AE94B084B08430843094AE84AE8430843084AE94AE942E842E8430843084AC84AE942E842E842C8
+FRAME_DATA 022720 424A0000000000000000395149D34A0941E941E841E839E339E339C339C331C331C339A239A231A331A331823182318231823182316229812981314231422942
+FRAME_DATA 022784 29622962296229412941294121412141294129422942214121412942294229422942294221422942294229422942296229622962296231623162298231823183
+FRAME_DATA 022848 316331823182316231623182318231823182318231823182318231A331A331A331C331C331C339C339C339C839C839E839E83A094209426A4AAB5B086B6973CA
+FRAME_DATA 022912 7810805288B391119952A192A9B3B219B239BA5BC278C2D9CAFACB3AD35AD35BDB5BDB7BDB9BDB9ADB9ADBBBDB7BD39BCB7ACB7BCB5BC31AC31ACAB9CAB9BA9B
+FRAME_DATA 022976 B25AA1F89172809073F25B8B534A4B094B094B094B094B094B094AEA4AC94AE94AE842E942E942E942E942C94AE942E842E842E942E942E942E94AC84AC842C8
+FRAME_DATA 023040 426A0000000000000000395149F34A2942083A083A0839E339E339C839C839C339C331A331A331A231A231A231A2318231823182316229622962298129612962
+FRAME_DATA 023104 29422942294229412941294121412941294129422942214221422941294229412941292129212962296229622962296229622962296229622962318231822982
+FRAME_DATA 023168 298231623182298329833183318331823182318231823183318331A331A331A339A339A339A339C339C339C839E83A083A083A093A294A4A528B5AE96B4A73AB
+FRAME_DATA 023232 7BF08031889290F09932A172A9B3B1D8B219B25BBA78BAB8C2D8C2F9CB1ACB3AD33BD35BD35BD35BD35BCB7BCB7BC35AC33AC31AC31ACADACAD9C2D9BAB9BA7A
+FRAME_DATA 023296 B219A1B8913280936BF05B6A53294B094AE94B094B094AE94AE94AC94AC94AC94AC94AE94AE942E842E84AE94AE942E942E942CB42CB4AC94AC94ACB4ACB42CB
+FRAME_DATA 023360 424A0000000000000000395049F34A2942093A0939E841E839C339E339C339C231C239A239A231A231A231A231A2318231823182296231813181296229622961
+FRAME_DATA 023424 29612941294229412941216121412942294229412921294229422942294221422942294229422942294229622962296229622962296229622962298229823162
+FRAME_DATA 023488 316231823182298229823162318331833183318331833182318231A331A331A331C339A339A339C239E339C839E839E839E83A0842294A4A528B5AE9634A6BAA
+FRAME_DATA 023552 7BF08032887390B09911A173A9B8A9D9B1F9B23ABA5BBA7BBA98C299CAB9C2F8CB18C31AC31AC31AC31ACB19CB19C319C2F9C2F8C2F8C2D9C2D9BAB9BA98B25B
+FRAME_DATA 023616 AA1A9998891278726BAB5B4A53094AE94AE94AE84AE94AC94AC94AC94AC94AC84AC84AE84AE84308430842E842E842E842E84AE842C842E842E84AEB4ACB42C8
+FRAME_DATA 023680 424A0000000000000000397149F3424A42293A083A0839E339E339C839C331C331C231A231A231A231A231833182318231623182296229622962296229622962
+FRAME_DATA 023744 29622961294121412141294129412941294129412941294129412942294229412941294229422942294229622962296229622962296229622962296229623162
+FRAME_DATA 023808 31822982298231823182318331633183318331A231A23182318231A331A331A231A339C339C339A839C839E839E839E83A083A0842294A4A528B530863496B8B
+FRAME_DATA 023872 73D080308071889090D19933A198A9B8A9D9AA1AB23AB238BA79BA9BC2B8C2BBC2D8CABBCADBCAF9C2F9C2F8C2F8C2D9C2D9C2F9C2D9C2B9BA99BA98B25BAA1A
+FRAME_DATA 023936 A1D9997388F1785263AB53494B084AE842E842E842EB4AA84AA84AC84AC942E942E84AC84AC84AC94AC942C942C942E842E842E942E842E842C842CB42CB42CB
+FRAME_DATA 024000 422A0000000000000000395151F04A4A4229420839E839E339E339C339C339C339C339A231A23182318231823182318231823182316229622962296129612962
+FRAME_DATA 024064 29612941294129422942294229422942294221412141292129212942214129412941294129412962296229422942294229622962296229622962296229623162
+FRAME_DATA 024128 31822982298231833162318331833183318331A231A331A331A331A331A331A331A331C339E339C339C339E839E839E842083A2942294A4A528B5B086349638A
+FRAME_DATA 024192 6BCB78108071887090B191129953A198A9D8A9F9B21AB23ABA5BBA78BA98B2B8BAD9C2B9C2B9C2FBC2FBC2B9C2B9C2B9C2B9C2B8C2B8BAB8B298B23BA9FAA9DA
+FRAME_DATA 024256 A1B9993380B173F2636B53094AC842E842C842A942A942C842C84AA84AA84AA84AA84AC94AC94AE84AE842C842C842E842E842E842C84AA9428942A842A842AB
+FRAME_DATA 024320 3A090000000000000000397249F04A49422842083A0339E839E339E339E331C331C331A231A23183318331823182318231823182298229812961296129612961
+FRAME_DATA 024384 29612942294229422942294229422941294121422142294129412941294129422942294129412962294229422942294229622962296229622963296229822962
+FRAME_DATA 024448 3162318231823182318231823183318231A3318331A331A331A331A331A339A339A339A339C339C839C841C841C83A084208420842294A6B52885AC8630A6B6B
+FRAME_DATA 024512 73B078108051887388B090F19112A133A978A9D9AA1AB1FABA1AB278BA78BA98BA98BA9ABA9AC298C298BAB9BAB9BA98BA98B2BBB2BBB25BB23BA9FAA9DAA1B9
+FRAME_DATA 024576 997890F280706BD15B4A52E94AC84AA842A84A8842884AA84AA842C842C842C842C842E842E84AC84AC842E842E84AC84AC842EB42EB42C842AB42CB3A8A3A8B
+FRAME_DATA 024640 3A090000000000000000397149F04A4A4A2942083A0839E339E331E331E339C831A331A331A331A331A331823182318231823182316231623162316229623142
+FRAME_DATA 024704 29422941294129412941294129412922292229412941294129412942294121612161292229222942296229622962296229622962296229622962296229623163
+FRAME_DATA 024768 316331823182318231823182318231833183318331A331A331A339A339A331C331C339A839C839C839C839E339E83A084208420842294A4A528B5AC85B096B4B
+FRAME_DATA 024832 739073D078318873889388D1911291339153A1B8A9D9A9FAB21BAA5AB27BBA78BA78C298C278C298C298C298C298C258BA5BB27AAA5AA9FBA9DAA9B9A9B99993
+FRAME_DATA 024896 915288B178335BD0534A4AC84AC842A84288428B42AB4AA84AA842A842A84AC842AB42C842C842A942C942C842C842C842C842E842E842C842CB42CB42AB42AB
+FRAME_DATA 024960 3A080000000000000000397249F0426A424942283A0839C339C339E339C239C339C239A331A33183318331A23182318231823182318229622962296229622961
+FRAME_DATA 025024 29612961294129422942294129412942294221412141294129412942294221612161214229422942294229422942296229422942314229622962296229623162
+FRAME_DATA 025088 3162316231623182318331833183318331833183318331A231C231A331A331A831A839C339C339C839C839C83A083A083A08422842494A4A528B5AC862E9634B
+FRAME_DATA 025152 6B907BD078108032887388B190D191129133A153A173A1B9A9D9A9FAB21BB23AB25BBA39BA59BA7BBA7BBA7BB25ABA1BBA1BAA1AA1FAA9D9A1D9A1B999989958
+FRAME_DATA 025216 90F280B370115B6B530952A84A8842884288428B428B428842A842A842A842C842C84AC84AC84AA84AA842C842C842A842A842CB42CB4AAB428B3AAA3AAA428B
+FRAME_DATA 025280 3A080000000000000000397249F04A694A4942293A0839E839E339C339C339A339A339A3398331A2318231823182318231823181318131823162316229622942
+FRAME_DATA 025344 29422961296129412941294129412942214221412141294229422921292129422942294229422942294229422962294229422962296229622982298129813162
+FRAME_DATA 025408 316231623182318231A231A231A23183318331A8318331A331A331A331A331C331C339C839C839E839E839C839E83A083A08422942494A4A526B52C85AE9634A
+FRAME_DATA 025472 6B6B73B07BF17812805380B088D188F2911299339953A193A1B8A9B8A9D8A1DAA9FAB1DBB1DBAA1AA9FAA9FAAA1AB1DAB1DAA9DAA9BAA9B8A998999891739131
+FRAME_DATA 025536 80D0787263B05B2A52A84AA84A88428B428B42AB42AB42AB42AB42A842A842A842C842CB42EB42CB42CB42C842A84AAB42AB42AB42AB42AB428A428B3A8B428B
+FRAME_DATA 025600 39E30000000000000000397251F04A694A494229420839E339E339E339E331C231C231A231A231A2318231823182318231823182316129822982296229622961
+FRAME_DATA 025664 29612961294129412941294121412941214121422142294229422941292129412942294229422142296229622962296229612962296229622962298229623162
+FRAME_DATA 025728 31622962318231833183318331A331A331A331A339A331A331A331A339A339A339C339C839C839E839E841E841E841E841E9420842294A4A528B52C85B085B29
+FRAME_DATA 025792 638A6B9073D07BF27832807088B188D290F39912A11399739973A198A1B8A1B9A1B9A1B9A1B9A1B9A1D9A1BAA1BAA9B8A1B8A199A17999789958993390F288D1
+FRAME_DATA 025856 80707813637053094AA842A842AB428B428B4288428842AB42AB42AB42A84AAB4AAB4AA84AA842AB42AB4AA84A8842AB42AB42AB42AB428B428B428A428A426A
+FRAME_DATA 025920 31E30000000000000000397252114A6A4A494228422839E339E339C339C339C331A339A339A331A2318231A23182318231813181318131822962296229613161
+FRAME_DATA 025984 31612961294129412941294121412941294121422142214221422942294221412941294229422942294229422962296229622962314229622962298229822962
+FRAME_DATA 026048 3182316231823183318331833183318331A331A331A331A331A339A339A339C339C839E339E331E839E841E841E841E8420842094A294A4A4A6B52A85AC95B0A
+FRAME_DATA 026112 634B6B8B73B073D278137853807088B290D2913291339953995399789978A193A19399B8A1B8A199A199A199A17999989998A15999389138911390D288918071
+FRAME_DATA 026176 78106BF05B4A4AC94AA8428B428B428B428B428B428B4288428842A842884AAB4AAB42A842A842AB42AB42AB42CB42AB428B428A428A428B428B428A428A426A
+FRAME_DATA 026240 39E30000000000000000397152104A6A4A4A4249422841E839C839C339C339A239A231A231A231A231A231823182318231813162318231822961296129612962
+FRAME_DATA 026304 29622941294129422941294229422922292229422942294129412942294229412941294129412942294229422962296229622962296229622982316231622962
+FRAME_DATA 026368 2982316231823182318231833183318331A331A339A331A331A331C331C331C831C839C339E339C839C83A0839E841E94209422942294A6A4A6A52AB5AC85B09
+FRAME_DATA 026432 632A63706BB173F1781178138050809188B190D29913993299339973999399989978A178A178A178A17899989998997399739173913290D290B2889188707853
+FRAME_DATA 026496 73F263B0532A4AC94288428B428B428B428B428B428B4288428B42884288428B4A8842CB42CB42AB42AB428A42AB42AB428B428A42AA428A428A426A426A3A6A
+FRAME_DATA 026560 31C30000000000000000397252104A6A4A6A4A494229420839E839E339C239C339A339A239A231A231A231A23182318231823182318231612961296229622961
+FRAME_DATA 026624 29612961294129412941214121412941294121412141214121412942294221412941294229422941294129422942314231422962296229623162316231623182
+FRAME_DATA 026688 318229823182298231823183318331A231A23988398831C331C331C331E339C839C839E839E839E339E339E83A083A08420942094A094A2A4A6B528B52A85309
+FRAME_DATA 026752 5B29636B6B8B6BD273F2781280337870809188B188F291139133995899589958A1589978997899589978A15399539953913290F290D188B18091807178516812
+FRAME_DATA 026816 63D15B6A4B094AA84A8B42684268426B428B426B426B428B428B428B428B4AAB4AAB428B428B3AAB3AAB428B42AB428B428B428A428B426B426B3A6A3A6A3A4A
+FRAME_DATA 026880 31E30000000000000000397352114A8A4A6A42494229420939C839C339C331C331A339A231A231A2318231A229A2318131813181318129822961316131412961
+FRAME_DATA 026944 29412961294129612941292129222941294129212921214129412921294229422942294129422942294229422942296229622942314229622982316331633163
+FRAME_DATA 027008 316331823182318231A231833183318331A331A331A331A339A339A339C839E339E839E839E839E839E839E33A083A083A0842094229424A4A6B528852A852E9
+FRAME_DATA 027072 5B0A5B4A5B8B6BB173F2781278338033807380B088D188D2911390F39118991399339153915399199919913291128912891288D188B188918070785070136BD1
+FRAME_DATA 027136 63905B2A52C94AA8426B42684268428B428B428B428B428B428B42AB42AB4A884A8842AB42AB42AB428B428B428B428B428B3A8A428A3A8A3A6A3A6A3A4A3A4A
+FRAME_DATA 027200 31C3000000000000000041525211528A4A6942694249420839E339E339C331C231C231A331A331A2318231823182316231623181316131622962316129612961
+FRAME_DATA 027264 29612941294129412941294129412921292129222922214121412921294129222922294129412942294229412962296229622962296229812981316231622983
+FRAME_DATA 027328 298331833183298231A23183318331A331A331A331A331C331C339C339C339C839E839E339E339E839E839E839E841E941E9422842284A294A4A4A8B52A85AC9
+FRAME_DATA 027392 5AE95B2A634A63906BD173F278337852807380718091889188B188D290D288F2911290F390F390F290F288F288D288D288B280B180908050783070126BD163B0
+FRAME_DATA 027456 5B6B52EA4AA94AAB428A428B428B428B428B42884268428B4A8B428B428B42AB42AB42AB42AB42AA42AA428A428A3AAA3AAA428A428A42893A89426A424A4249
+FRAME_DATA 027520 31A2000000000000000039735211528A4A8A4A494A293A283A2339E331C339A339A331A331A231A231A231A23182318231822982298229612961296229612961
+FRAME_DATA 027584 29612941294221412141292229422921292129412941292129212141294129412921214121412942294229412941296229622962296229622962298229823182
+FRAME_DATA 027648 318231823182318231823182318231A331A331C331C331C331E339C839C839C839C839C339C339E339E339E83A0841E941E9420A422A42494A4A4A8B52AB52C9
+FRAME_DATA 027712 5AE95B0A634B636B63906BD273F378138050807180718072889288B188B188D188F188F188F288D188D188D188D180B2809178937873783370126BF163B05B70
+FRAME_DATA 027776 530B52C94A884A8B428B428B428B428B428B426B426B4288428842AB42AB42AB42AB428B428B42AA428A428B428B3AAA3AAA426A426A426A3A6A42493A493A49
+FRAME_DATA 027840 31A2000000000000000039725231528A4A8A42694249420842083A0339C339A339A339A231A231A231A231823182318231623182318229612961314231422961
+FRAME_DATA 027904 29412941294121412141294129412921292129412121290129212141214129422942294229422942294229422962314231422962296231633163316231623182
+FRAME_DATA 027968 3182318231A3318231833183398331A231C239A339A339A839A839C339E831E839E839C839C839E339E839E839E941E9420942094229422A4A4A4A8A4AAB52A8
+FRAME_DATA 028032 52C85B0A632B63506B706B9073B170127833805080508051887180B080B180B188B180B188D180B180B188918891809180707853781273F273D16BD163905B2A
+FRAME_DATA 028096 52E94AAB4A8B4A8B4A6B4A6B4A8B428B428B428A428A428B42AB4A8A4A8A42AB42AB4A8A4A8A428A428A428A428A426A3A6A42893A693A693A693A493A493A29
+FRAME_DATA 028160 31A100000000000000004193523152AA4A894A694A49420941E841E339C339C331A331A331833182318231823182318231813181318129612961296229622941
+FRAME_DATA 028224 29412961294129412941292129212921292121412141294129412142214229412941294129422962296229622962296229622962296229822982318231823183
+FRAME_DATA 028288 31833182318231A231A3318331A839A339A339A339C339C339E331E831E839C839E839E839E839E83A0839E33A084208420942294229424A4A4A4A6B4A8B52A8
+FRAME_DATA 028352 52C8530A5B2B634A636B6B906BB073D27BD378138033803080508890889080B180918891889180B18091807080708050783070126BF273D16BB16B705B2B5AEA
+FRAME_DATA 028416 4AA942AB428B4A6B4A8B4A6B4A8B428A428A428A428A428A428B42AB42AB428A428A428B428B428A428A428A428A428A3A6A42694269424A3A293A493A493A28
+FRAME_DATA 028480 29A200000000000000004193523252AA4A6A4A69424942483A2841E839C339C339A231A231A23182318231823182318231813162316229612961296229422942
+FRAME_DATA 028544 29423141292129412941214121412141214129212921214121412921294129422942294229422941294129412962296229422962296231623162298231823183
+FRAME_DATA 028608 31833182318231A331A33983398339A339A331C331C339C339C839E339E839E839E839E839E839E83A0841E841E842084228422942294249426A4A6A4AAA5288
+FRAME_DATA 028672 5AC952E95B29632A6B4B6B706B906BD06BF173F27812781278337850785080508851809080908070805078537832781373F26BF16BD06BB16B705B6B532A52E9
+FRAME_DATA 028736 4AA84A6B4A6A428B428B428B428B428B426A428B428B428A428A42AB42AB4A8A4A8A428A428A428B3A8B426A426A3A8A3A8A424A3A4A42493A493A483A483A28
+FRAME_DATA 028800 29A2000000000000000041905233528B526A4A6A42294249422841E839C339C331A231A331A331A231A231823182318231623162316231612961296129612941
+FRAME_DATA 028864 29412941294121412942294121412121294129212921294121412922292229212941214221422942294229622962296229622962296231623162318231823182
+FRAME_DATA 028928 31A231A231A231A331A331A331A331C331C339E339E339C339E339E339E841E841E839E841E83A083A09420842084209420942294229424A424A4A6A4AAB52AB
+FRAME_DATA 028992 52C852E95B095B2B634B6B706B906B9073B173B273D270127012703278337833783378327853781378137BF27BF273F26BF163D163B06B9063505B2A52E952AB
+FRAME_DATA 029056 4A6B426A426A4A6B4A6B426B4A6B4A6B426B426B426B428B428B428B428B428A428B428A428A3A8A3A8A426A424A3A693A69424942493A493A483A293A283A28
+FRAME_DATA 029120 2982000000000000000041B1525352AA4A8A4A6A424A422842283A0839E839C331A331A231823182318231823182318229822962296229612961296129612941
+FRAME_DATA 029184 29412941294129412141292129212121212121222121212129212141214129212942294129412942294231423142296329632962296229623162318231833183
+FRAME_DATA 029248 31A3318331A331A331A339A339A339C339C339C839C839E339E339E939E939E839E841E841E841E841E8420942094229422942094229422A4A4A4A6A4A8B5288
+FRAME_DATA 029312 52A852C95AE95B0A632A634B6B906BB16BB1739173B173F173F173F173F273F37813701270127BF37BD373F273D26BF16BD063B063905B70534B5B0A52A84A68
+FRAME_DATA 029376 4A4B4A4A4A4A426A428A426A426A426A428B426A428A426B426B428A4A8A4A8A4A8A426A426A426A426A426942693A693A6942493A493A483A483A283A283A08
+FRAME_DATA 029440 2961000000000000000041D2527852AA4A8A4A6A4A4A42493A29420339E339E339C331A331823182318231823182318231623162314231622941296129412981
+FRAME_DATA 029504 29602941294129412921294129212921292121212121292129212921292121422142294129412942294229622962294229622982298231833183318231823183
+FRAME_DATA 029568 31A331A331A331A331A331A331A339C339C339C839C839E339E841C841C841E841E841E841E842084208420942094209420942294229422A4A4A426B4A8B4A88
+FRAME_DATA 029632 52A852C952E95B095B2A5B6A636A63906B906B9173B173B173B173B273D273D273D273F2701273F273D173D26BD26B91639163705B4B532B530A52E94AA8426B
+FRAME_DATA 029696 424B424A424A424B426B426B426B428A428A426A426A426B428B4A6A4A6A428A428A426A426A426B424A3A693A693A693A693A493A493A293A293228322831E8
+FRAME_DATA 029760 2961000000000000000049D25A7952C84AAB4A6B4A4A42494229420839E839E339C339A339A33182318231823182316231623161316129622961296129412941
+FRAME_DATA 029824 29412941292129412921292129212921292121412141292129212141214129412941214121412942294229612961296229622962316231833183316231623183
+FRAME_DATA 029888 318331A331A339C331A339A339C339E339C339C841C839E83A0841E841E841E841E8420842084209420942294229422942294A2A4A2A4A494A4A524B526B526B
+FRAME_DATA 029952 528852A85AC95AEA5AEA5B2A634B635063706B7073906BB173B173D073D173F06BD073D173D16BD16BB16BB16B906B716350632A5B2A5B0A52C94AA8428B424A
+FRAME_DATA 030016 424A424A424A3A4A426B426A428B4A6B426A426A426B426B426B428A426A3A6A3A6A3A6A426B3A893A894269426942493A493A493A493A283A283223320331E8
+FRAME_DATA 030080 2961000000000000000049D3629A5AE852AB4A6A4A4A4A2942293A083A0839E339C331A331A23183318331823182318229623161316131422942294229412942
+FRAME_DATA 030144 29412941294129212921294121212921292129412121214121212921292121422142214121412941294129422942296231622982298331823182318231833983
+FRAME_DATA 030208 398331A331A839A339A339C339C339C339E339E339E339E339E341E8420841E8420942084208420842084229422942294A294A494A494A4A4A4A4A4A526B528B
+FRAME_DATA 030272 528B52A852C95B095B095B0A5B2A5B4B5B4B636B636B63906B906B906B906BB06BB06B916B916B916B716B906370634B5B4B5B2A530A52E952A84A6B426B424B
+FRAME_DATA 030336 424B424A424A424A424A426A426A426B426B424A4A6A428B426B428A428A426A424A426A426A426A4269424942493A493A493A283A283A28320339E331E231E3
+FRAME_DATA 030400 2161000000000000000041F35ABA5B0852AB4A8A4A694A4942294208420839E339C331C231C23183318231823161316231623182296129622941296129612941
+FRAME_DATA 030464 294129412941214121412922292121412141292129212921292129412941294129412941294129422942294229422962316229622962318231823183318331A2
+FRAME_DATA 030528 31A331A331C339A339A339C339C339C339C339C839C839E83A084209420941E842094209420942294229424942494A294A49426942694A4A4A4A4A6A4A8A526B
+FRAME_DATA 030592 528852AB52C852E95B095B0A5B2A632A632A634B634B636B636B638B638B638B638B63706370636B634B635063506B0A630A5B0952E84AE842AB4A6A424A424A
+FRAME_DATA 030656 424A424A424A3A4942493A6A426A426A426A426A426A428A428A426A426A426A426A424A426A4269426942493A493A493A493A283A083A03320331E331E229E3
+FRAME_DATA 030720 2961000000000000000049F862BB63095AC84AAA4A6A4A49422942093A0939E839C839C231C231A2318231823162296129613162296229622961296129612941
+FRAME_DATA 030784 29412921292129412141294129212921292129212921292229222941292129422942294129412942296229632963296229623162316231833183318231A239A3
+FRAME_DATA 030848 39A331A331C339A339A331C331C339C339C339C839C839C841E841E84208420842094229422942084A294A294A294A294A294A2A4A2A4A694A69526952694A8A
+FRAME_DATA 030912 52AA52A852A852C852E85AEA5B0A5B295B2A5B2A634B634B636B636B636B634B634B634B634B634B634B632B5B2B5B2A52E952C952A94AAB4A6B424A4249422A
+FRAME_DATA 030976 422A424A424A424942493A4A3A4A424A424A426A426A426A426A426A426A426A424A424A424A42694249422942293A293A083A28320839E331E331E331E229C3
+FRAME_DATA 031040 2941000000000000000049F862BB63295AE84AAB4A8B424942294229420841E839C339C9398831A3318231823162316131613161314129622942294131412941
+FRAME_DATA 031104 294129212921292129422941294129212921294129412921292129422942294229622941296129422942296229622962296229622982318231823183318339A3
+FRAME_DATA 031168 39A339A339A339C339C339C339C339C339E339E339E33A03420841E84208422842284A084A084A294A294A494A494A494A494A2A4A4A4A4A4A6A4A6A4A6A526A
+FRAME_DATA 031232 528A4A8B52A852C852E852E953095B095B095B2A5B4A634A634A634A634A634A634A636A634A632B5B2B5B2A5309530952E952A852884A8B426B424942494229
+FRAME_DATA 031296 424A424A424A4229422A420942093A293A4A3A6A426A426A426A426A424A42694249424A42293A693A48420942083A093A083203320331E331E331C331C331C3
+FRAME_DATA 031360 2941000000000000000049F862D863295B0852E84AAB4A69422942293A0841E841E839C339C339A2318231823182318131813162314229422942294231422941
+FRAME_DATA 031424 294129412941292229222921292129412921212129412942294221412141294129412961296129622962296229822982298231623182318231823182398231A3
+FRAME_DATA 031488 39A339A339A339A339C339C339C339C839C839E839E84208420842094209422842294A094A09422942294A494A494A494A494A494A694A694A694A6A4A6A4A8A
+FRAME_DATA 031552 4A8A4A8B528B52CB52CB52C852C85AE95AE95B295B295B2A5B2A5B2A632A5B2A5B2A63295B295B0A5B0A530952E95AC952A94AA84A8B4A6B4A4B424A424A422A
+FRAME_DATA 031616 422A422942293A293A2942293A093A493A49424A424A3A6A3A6A424A3A4A4249424942493A293A293A293A283A083A083A083208320331E331C331C331C331A3
+FRAME_DATA 031680 216000000000000000004A1862FB632A6309530852CB4A6A42494228422841E841E839C839A339A3398329A22982316229613142314229612941294129412942
+FRAME_DATA 031744 29422941294129222922294129412921292129212941294129412941292121612961296229412962296229622982316231623162316231823182318331A33983
+FRAME_DATA 031808 39A3398339A339A839A839C839C839E839E841C841E941E8420842094209422942294A094A2942294A49422A4A4A4A4A4A4A42494A6A524A524A4A6A4A6A4A6A
+FRAME_DATA 031872 4A6A528A528A528A52AA52C852E85AC85AE85AE95B095B095B095B095B095AE95AE95B095B095AE95AE952E852E852A84A884A8B4A6A4A4A424A424A422A3A49
+FRAME_DATA 031936 3A493A293A293A2A3A2A3A093A093A093A093A29422A3A494269424942293A293A293A493A293A293A083A283A03322832233203320331E331E331A329A229A2
+FRAME_DATA 032000 2121000000000000000052186AD863695B285B2852EB528B4A2A42294208420841E839E331C339A239A231A229A2296229622962296229612961294129412941
+FRAME_DATA 032064 2941294129412921292129212921294229422941294129412941292129212941294131423142294231423162316229623183318231823182318231A231A239A3
+FRAME_DATA 032128 39A339A339A339C339E339C339C339E339E841E841E842084208420842084A084A084A284A284A294A294A494A49426A426A4A4A524A4A694A69524A526A526A
+FRAME_DATA 032192 526A4A8A4A8A528A528B52A852A85AC85AC85AE95AE9530953095B095B095AE85AE8530952E9530952E852E84AC84A8B4A6A428B426A424A424A422A422A4229
+FRAME_DATA 032256 42293A493A293A293A293A093A093A093A093A093A093A293A29422942293A293A493A283A083A093A093A283A083203320331E331E331E329C231A229A22982
+FRAME_DATA 032320 212000000000000000004A1862F863895B69532952E852AB4A6A4A2942093A0839E839E339C339A339A331833183318229623162314229612941294129412921
+FRAME_DATA 032384 29412942292229212921292129412140216129212921294129412922292229412961314231422962296231623162316231623182318231823182398239A331A3
+FRAME_DATA 032448 31A339A339A339C239E339C339C339E841E84208420842084208420842284A094A094A094A094A294A494A494A494A494A494A4A524A52694A69524A526A526A
+FRAME_DATA 032512 528A528A528A4A8A52AA528B52AB52AB5AAB52E852E85AC85AC852E85AE852E852E952E852C852CB52AB4AA84A8B4A6B4A6B4A6A4A6A426A424A422A422A422A
+FRAME_DATA 032576 422A3A293A293A0A3A0A3A093A093A0939E939E839E83A083A083A293A093A2A422A3A293A093A283A083A08320831E331E331C331C331C329A329A229A22982
+FRAME_DATA 032640 18E000000000000000004A186AF86B6A634A5B28530852CB4A8B424A4229420941E839C839C331A331A331A23182316231622962296229622942294129412942
+FRAME_DATA 032704 294229422942292129212921292129412941294129212922292229412941292229423141314131413141316231623162316231823182318331833983398331A3
+FRAME_DATA 032768 31A339C339C339C839C839C339E339E839E8420841E84208420842084208422942294A294A294A494A494A494A494A694A69524A524A4A6A526A526A526A4A8A
+FRAME_DATA 032832 4A8A528A528A4A8B528B528A528A5A8B5A8B52AB52AB52C852A852C952A952C852C852CB52AB528B528B4AAB4A8A4A6A4A4A4A4B424A424A4229422942293A29
+FRAME_DATA 032896 3A293A293A293A093A08320932093208320831E831E839E839E83A083A083A083A293A283A283A283A083203320331E831C329C329A331A32983298229822982
+FRAME_DATA 032960 18E30000000000000000423963396B6B634A5B295B0952C84AAB4A6A424942093A0839E839E839C331A331A23182318231612961296131613161294229422942
+FRAME_DATA 033024 294229412941292129212942294129212941294129412922292229412942294229422941316131623162318231623182318231823182318331A331A239A339A2
+FRAME_DATA 033088 39A239A339C339C339C339E339C341C841E84208420842084208420842284A094A2942484A4842494A4A4A494A494A4952694A6A4A6A4A6A4A6A526A526A526A
+FRAME_DATA 033152 528B4A8A528A528B528B528A528A52AB52AA52AB5AAB52AB52AB52AA52AA528B52A8528B528B4AAB4AAB4A8A4A6A426A426A4A6A424A424A4229422942293A29
+FRAME_DATA 033216 3A083A093A0939E939E8320931E931E831E831E831E831E831E831E831E331E831E831E8320831E831E831E331C229C329C329A229A229A229A2298229822982
+FRAME_DATA 033280 10C300000000000000004A196AF96B8A6369634A5B0952E852A84A8B424A3A293A0939E839C839C839A339A33983318231823182316231623162316231623162
+FRAME_DATA 033344 3142296129412942294229422942294129412941294129412941294129412962296229422962296231623142316231623182318231823182398339A339A239A3
+FRAME_DATA 033408 39A339A339A339E239E239C341E341E841E841E841E84208420842284A284A284A284A494A494A2A4A2A4A4A4A4A4A4A4A6A4A4A4A4A4A694A8A526A528A526A
+FRAME_DATA 033472 528A528B528B528A528A528B52AB4ACB4ACB52AB52AB528A528A528A52AA528B528B4AAA4AAA4A8B4A8A4A6A4A6A4A6A4A49424A424A422A422A3A293A283A29
+FRAME_DATA 033536 3A093A0939E939E839E83208320831E831E83203320331E831E839A839A831C331C331C331C331C331C331C331C331C331A229A229A229832982298129612161
+FRAME_DATA 033600 10C3000000000000000052396AF96BAB636B634A5B2952E852CB4A8B4A6A422942093A0839E839C339C339A239A239A331A331A2318231823182318231823942
+FRAME_DATA 033664 394231822961314231422942294229412941294129412941294129422942294129412941296231623162316231623163318331823182318331A339A331A339A3
+FRAME_DATA 033728 39A339A339C339C241C339C839E839E839E842084208420842284208420842294A294A294A494A494A294A494A494A494A494A694A69526A526A4A694A8A528A
+FRAME_DATA 033792 528A4AAA4AAA4AAB4AAB528B528B528B528B52CB4ACB52AA52AA4AAB4AAB4A8B4A8B4A8A4AAA4A8B4A6A426A426A424A424A422A4209422942293A293A293A29
+FRAME_DATA 033856 3A0939E939E839E839E83208320831E831E931E831E831C831C831C331C331C331A329A229A229A329A329A329A329A2298229A2298229622161216121412141
+FRAME_DATA 033920 10C30000000000000000523973196BB0638B632B630A53084AE84AAA4A8A4269422939E839C839E339E331E331C339C339A339A339A339A339A331A231823982
+FRAME_DATA 033984 31823182316231622962316229622942294129412941294129412942294229422942296229623161316131623182318231823182318231A331A331A339A33983
+FRAME_DATA 034048 398331C239C239A341C341C341C339E839E84208420841E84208420842294A284A284A094A294A294A294A494A494A4A4A4A524A524A4A6A4A6A526A526B528A
+FRAME_DATA 034112 528A528A528A4AAB4AAB528B528B528B528B52AA528A52AB52AB528B528B528B4A6B4A8A4A8A4AAA42894A4A424A4249424942294209422942293A093A093A09
+FRAME_DATA 034176 39E93209320939E839E8320831E831E831E831E831E331C831C831C329C331A3298329A329A32982298229822982296129612161216121412141212121211900
+FRAME_DATA 034240 10C300000000000000004A596B396BAB6B6B636A5B29530852E852AA4A8A4A4A4A29420941E839E839E841C841C841C341C339E339C339C339C339A339A339A2
+FRAME_DATA 034304 39A239833983398239823182316231623162294229422942294129422942314131412941316131623162316231623182318231A231A23182318231A231A23983
+FRAME_DATA 034368 39A339A339A339C339C339C339C341E841E84203420341E84208420842084A284A294A094A094A484A484A4A4A4A4A4A4A4A4A4A4A4A4A6A4A6A524B526B528A
+FRAME_DATA 034432 528A528B528B528A52AB52AA52AA528B528B52AA528A528B528B528B528B4A8A4A8A4A8A4A6A4A6A4A6A4A4A424A4A49422942294209422942293A283A283A08
+FRAME_DATA 034496 3A0839E839E839E839E831E831E831E831E831C831C831C331C331C331A331823182298229822982298229622941216121612141214121202120192019201900
+FRAME_DATA 034560 10A30000000000000000523973396BCB638A636A5B495B0952E852AB4A8B4A4A4A494A294A094208420841E841E841E841E841E341E341C849C841E341C341C3
+FRAME_DATA 034624 41C341C341C341A341A339A239A2398331823162316229612961296129613142316231623162316231623162316231823182318331833982318231A231A239A2
+FRAME_DATA 034688 39A239A239C239A339A339C339E339E339E339E341E341E8420941E8420842084A0842294229422942494A494A494A294A4A524A524A4A6A526A528A528A528A
+FRAME_DATA 034752 528A4AAA52AA528A52AB52AB528B528A528A528B528B528B528B528A4A8A526B4A6B4A8A4A694A4A4A4A4A494A4942294229422942093A0942293A083A0839E8
+FRAME_DATA 034816 39E839E831E831E831E831C831E831C831C839C331A331C331A329A329A329A229A229A2218121822162216121612141214121211921212021001900190018E0
+FRAME_DATA 034880 10A3000000000000000052396B396BD0638B636A5B4A5B28530852C84AAB4A6B4A6A4A4A4A294A294A0942094A094A094A094A084A084A094A094A084A0849E8
+FRAME_DATA 034944 49C849E841E841C341C341C341A239A339833982316231823162316131612962296231613161316131623162318231823182318231823182318231A131A239A2
+FRAME_DATA 035008 39A231A231A339A339A339A339C339C339E341E341E339E33A084208420842094209420942294A294A29424842484A494A494A4952494A6A526A4A6A526A528A
+FRAME_DATA 035072 526A52AA52AA528B528B52AA52AA528A52AA528B528B528A528A4A6B528B4A6B4A6B4A6A426A4A6A424A4A494229422942283A093A093A093A093A093A0939C9
+FRAME_DATA 035136 39C939E839E831E831E831E831C831C831C831C831A829C329A329A329A329A22982298229822182216121612141214121212121210021011900190018E018E0
+FRAME_DATA 035200 10A300000000000000004A5A6B396BD0638B636A5B4A5B295B0852C84AA85268526B4A8A4A6A524A524A4A494A495229522952494A2852295229522852285208
+FRAME_DATA 035264 5228520852084A084A0849E849C849C341C341C339A239A3318231823181318129613161316129812961316231622982318231823182318231823182318231A2
+FRAME_DATA 035328 31A231A239A239A339A339A339A341A341C341C841C839E841E841E841E841E8420942284228422942294A294A29424942494A4952494A6A4A6A4A695269526B
+FRAME_DATA 035392 526B526A526A528B528B4A8A4A8A528A528A4AAA4AAA4A8A4A6A4A6A4A6A4A6A4A6A4A6A4A694A6A424A42494249422942293A293A0939E839E839E339E339E8
+FRAME_DATA 035456 39E839E839C831E831E831E831C831C831E831C831C331A3318329A3298229822982296229622162216121612141214121211920192019001900190018E018E3
+FRAME_DATA 035520 10A2000000000000000052596B396BCB63AB636B5B4A5B2853285AC852C852A852A85A8B528B528A528A528952895A495A6A5A495A4A5A695A495A6A5A495A49
+FRAME_DATA 035584 5A485A495A4952295229520952094A284A0849E341C339C339A339A3318231823182318129812962296231623162316231623182318231823182318231823982
+FRAME_DATA 035648 398231A239A231A239A239A339A339C339C339C339C339E339E841E8420841E84A0842284208422942294A294A4A4A494A494A494A6952695269428A4AAA4A8A
+FRAME_DATA 035712 4A8A524A526A4AAA4A8A528A528A4A8A4A8A4A8A4A8A4A6A4A694A6A4A6A4A6A4A4A4A4A4A4A4A2A4A2A422942293A293A293A093A093A0839E839E839E831E8
+FRAME_DATA 035776 31E831C831C831E331C331C831C831C331C331A331A331A331A329A229822983296329622162214121412141214121012101210021001900190018E018E018E3
+FRAME_DATA 035840 10A200000000000000004A596B596BD063AB5B8B5B8A5B495B285B085AE85AE85AE85AA85AA85AAB5ACB62AB5AAA62AA628A62AA62AA6A8A6A8A628A628A628A
+FRAME_DATA 035904 628A626A626A626962695A495A495A495228520851E841E341C341C339A341834183318231823182316231623162316231623162318231823182318231A23183
+FRAME_DATA 035968 318331A239A339A239A339A339A339C339C339A339C339E839E83A033A0342084208420842084228422842294A494A294A294A294A494A494A494A49526A5269
+FRAME_DATA 036032 52694A6A4A6A526A526A526A528A4A694A694A6A4A6A4A6A4A6A428A428A4A694A69424A424A424A4229422942093A093A0839E939E939E939E939E839E839E8
+FRAME_DATA 036096 39E831C831C831C831C831C331C331C331A331C331A329A229A22982298229822982218121612141214121401940212021001900190018E018E018E018E318E3
+FRAME_DATA 036160 10820000000000000000525973596BF063CB638B5B6A5B4A5B2963295B086309630962E862E8630B630B6AEB6AEB6AEB6AEB6AEB6AEB72CB72EB72CB72EB72CB
+FRAME_DATA 036224 6ACA72CB6ACA6ACA6AAA6A8A6A8A62895A695A495A2952284A0849E341C341C341C339A339833963396331623162316231623162316231813181318231823182
+FRAME_DATA 036288 318231A231A239A239A231A231A331A331C339A339C839C339E339C839E841E341E34208420842294229422842284A494A4942494A494A494A694A4A4A4A4A6A
+FRAME_DATA 036352 4A6A4A6A4A6A4A6A4A6A4A6A4A6A4A6A4A6A4A694A6A4A6A4A6A4A6A4A69424A424A4249424942294229420842293A083A083A083A0839E839E839C839C839C8
+FRAME_DATA 036416 31C831C831E831E331C331C331C331C331A331A329A23182318229822982296229612141216121412141214121202100210018E018E0190018E018E318E310C3
+FRAME_DATA 036480 10A20000000000000000525A735A6BF063D06370634B636A5B49632963496B286B286B086B2873297329732B732B7B2B7B4B7B087B287B4B7B4B7B0B832B8308
+FRAME_DATA 036544 83087B087B087B0B7AEB72EB6ACB6ACB6AAA628A62695A495A2952284A2849E841C841C341C239A339A331A231A2318231813162316231823182316231823182
+FRAME_DATA 036608 31823182318231823182318239A23983398339A339A339A339C339C339C339E339E34203420842294229422942294A494A494A294A294A494A494A494A4A4A69
+FRAME_DATA 036672 4A694A694A694A6A4A6A4A694A694A694A694A494A6A4A6A4A49424A424A424942294229422942293A083A283A083A083A08320832083A0839E839C839C831E3
+FRAME_DATA 036736 31E331C331C331C331C331C331C331A331A33183318329A32983296329622961216121412141212121212120190019201900190018E018E018E010E010E310E3
+FRAME_DATA 036800 10A200000000000000005259735973D06BD06BAB638B636B636B6B696B6973697369736973897B897B8983698369836983898B888B6893698B698B688B888B68
+FRAME_DATA 036864 8B688B488B488B48832883287B2B7B0B7AEA72CB6AAA628962695A6A5A49522952084A0849E349E341A339A339A339A231823182318231623162316231823182
+FRAME_DATA 036928 3182318231823182318239633983398239A3398339A331C231C239C339C339E339E341E841E84208422842094229422842284A294A294A494A494A494A494A49
+FRAME_DATA 036992 4A4A4A4A4A4A4A694A694A694269426942694A294A494A294A294A294A29422A422A422942093A283A283A283A083A093A093A033A0339E839E839C839C831E3
+FRAME_DATA 037056 31E331C331A331A331C331A331A331A331A3318331832983298229622962294121412141214121212121212119001900190018E318E310E010E018C318C310E3
+FRAME_DATA 037120 108200000000000000004A59737A73D073D06BAB6BAB63AB638B736A736B73AA73AA838983AA83CA8BAA93AA93CA9BCA9BCA9BCA9BCA9BC99BE9A3CAA3CA9BCA
+FRAME_DATA 037184 9BCA9BAA9BAA9B899B69938993698B4983297B0872EB72AB72AB6A8A6269624A62295A2952084A084A0841E341C339C339A33982398239623982318231623182
+FRAME_DATA 037248 316231823182318231A2318231823182318239A239A239A239C339A339C839C339C841C841E841E841E849E94A09422942094249424942494249424942494A29
+FRAME_DATA 037312 5229424A424A4A484A484A494A49424A424A4A494A4942494229422A4229422A3A2942293A09420942093A083A083A083A083A0839E839E839C831C831C831C3
+FRAME_DATA 037376 31C331A331A331C331C331A331A331A329A329822982298229622961296121412141292121202120212019001900190018E018E018E018E010C010C010C310A3
+FRAME_DATA 037440 08A20000000000000000525A735A73F06BD073CB6BAB738B738B73AB73CB83AA8BCB8BEA880A8BEB900B980B982BA00AA80BA82AA82AA84AA84AA84AA84AA82B
+FRAME_DATA 037504 A82BA04AA02AA80AA009A3CA9BAA9BAA936993498B287B287B0B7ACB72AA6A8A6A69626A5A295A4952284A284A0841E841C339C339C339A33983398231823182
+FRAME_DATA 037568 3182316231823182318231833183318331A3398239A331A339A339A339A339C339C839C841E841E841E841E841E942084208422842284A094A29424942494A48
+FRAME_DATA 037632 4A48424842484A294A2942494249424A42294A4942294229422942293A29422942293A283A083A083A083A093A093A083A0839E839E831C831C839C339C331C3
+FRAME_DATA 037696 31C331C331C331C331C331C329A331A3318329A22982298229822162214221412121212121212121210121002100190018E018E318E318E010C010C310C310A3
+FRAME_DATA 037760 08A200000000000000004A5A735A73F073F073F073F07BCB7BCB83CB83EB880B880B900B9830A02BA04BA84BA86BB06BB090B88BB890B8B0B8B0B0D0B0D0B890
+FRAME_DATA 037824 B890B090B08BB86BB06BB04BA82BA80BA3EA9BCA93A98B698B48832B7AEA72CB72AB6AAA6A69624A5A4A5A2952084A284A0841E839C841C339A23983398331A3
+FRAME_DATA 037888 31833182318231823182318231823983398339A339A331A331A3398339A339A339C339C339C339C839C841E841E84208420842084A08420842284A2842284229
+FRAME_DATA 037952 4229422842284A284228422842284229422942294209422942293A293A293A0842283A093A093A093A0841E939E93A083A0839E839E839E331C331E331C331A8
+FRAME_DATA 038016 31A831A331A331A331A331C331A329A229A229A22982298229622941294121212120212121012120190021002100190018E018E010E310C010C010C310C310C3
+FRAME_DATA 038080 08A20000000000000000525A735A701070107BD07BF083F083F093EB901090309850A050A891A8CBA8D0B8D0B8D0B8F1C111C8F1C911C911C911D111D111C911
+FRAME_DATA 038144 C911C8D1C8D1C8B1C8B1C0B0B890B06BA84BB00AABCAA3AA9B699348932883287B087AEB72AA6AAA6A89626A5A495A4852284A0849E341E341C339C339A339A3
+FRAME_DATA 038208 39833983398339A231823183318239823982318331A339A239A239A339A339C339C339C341C341C839C841E841E841E841E841E841E842094209420842084209
+FRAME_DATA 038272 4229422842284229422942484248422842284228422842294229420942094209420942093A083A093A083A083A083A0839E831E831E831E331E331C831C831A3
+FRAME_DATA 038336 31A331C331C331A331A331A331833182298229622962296221412941214021212121212119001900190019201900190318E318E310E318C318C310C310C310C2
+FRAME_END fnv=D08C9FA3

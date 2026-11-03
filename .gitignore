@@ -3,9 +3,6 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-secret.cpp
-secret.h
-lib\MqtttConfig\MqttConfig.h
-lib\MqtttConfig\MqttConfig.cpp
-lib\WifiConfig\Wificonfig.h
-lib\WifiConfig\Wificonfig.cpp
+
+.codex-temp/
+src/classhub_defaults.h

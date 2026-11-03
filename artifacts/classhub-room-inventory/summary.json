@@ -1,0 +1,20 @@
+{
+  "status": "APPLIED_AND_VERIFIED",
+  "batch_id": "d0ad8a80-7894-5783-9617-7d5aba76f693",
+  "rooms": [
+    "DTD201",
+    "EAUT101",
+    "EAUT105"
+  ],
+  "types_per_room": 14,
+  "rows": 42,
+  "quantity_per_room": 138,
+  "catalog_rows_added": 14,
+  "data_source": "MOCK",
+  "power_values": "UNKNOWN",
+  "measurement_scope": "UNCONFIRMED",
+  "old_equipment_preserved": 23,
+  "old_catalogs_preserved": 16,
+  "protected_counts": "UNCHANGED",
+  "audit_entries": 42
+}

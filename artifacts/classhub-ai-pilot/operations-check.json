@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "reproducible": true,
+  "removal_rehearsal": "ALL_BATCH_ROWS_REMOVED_WITHIN_TRANSACTION",
+  "rehearsal_transaction": "ROLLED_BACK",
+  "batch_present_after_rehearsal": true,
+  "counts": {
+    "samples": 60390,
+    "events": 270,
+    "contexts": 36,
+    "anomalies": 9,
+    "non_mock": 0,
+    "invalid_json": 0
+  },
+  "original_telemetry_count": 10
+}

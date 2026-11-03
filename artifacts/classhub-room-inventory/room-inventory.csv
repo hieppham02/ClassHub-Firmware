@@ -1,0 +1,43 @@
+﻿room_id,name,quantity,scope,manufacturer,model,rated_input_w,branch,source,inventory_source,note
+DTD201,Điều hòa Casper,1,ROOM,Casper,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Bảng viết phấn,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Camera Hikvision,1,ROOM,Hikvision,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Quạt trần Nanoco,2,ROOM,Nanoco,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Ghế gấp inox xanh,76,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,"Đèn LED 1,2 m bán nguyệt",3,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Máy chiếu Sony,1,ROOM,Sony,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Đèn Sino,10,ROOM,Sino,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Quạt cây Midea,1,ROOM,Midea,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,"Bàn gỗ 0,5 m x 1,2 m",38,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Ghế inox chân quỳ lưới đen,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Bàn giảng viên,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,TV TCL 4K,1,ROOM,TCL,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+DTD201,Bộ phát Wi-Fi Grandstream,1,ROOM,Grandstream,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Điều hòa Casper,1,ROOM,Casper,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Bảng viết phấn,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Camera Hikvision,1,ROOM,Hikvision,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Quạt trần Nanoco,2,ROOM,Nanoco,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Ghế gấp inox xanh,76,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,"Đèn LED 1,2 m bán nguyệt",3,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Máy chiếu Sony,1,ROOM,Sony,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Đèn Sino,10,ROOM,Sino,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Quạt cây Midea,1,ROOM,Midea,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,"Bàn gỗ 0,5 m x 1,2 m",38,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Ghế inox chân quỳ lưới đen,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Bàn giảng viên,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,TV TCL 4K,1,ROOM,TCL,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT101,Bộ phát Wi-Fi Grandstream,1,ROOM,Grandstream,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Điều hòa Casper,1,ROOM,Casper,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Bảng viết phấn,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Camera Hikvision,1,ROOM,Hikvision,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Quạt trần Nanoco,2,ROOM,Nanoco,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Ghế gấp inox xanh,76,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,"Đèn LED 1,2 m bán nguyệt",3,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Máy chiếu Sony,1,ROOM,Sony,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Đèn Sino,10,ROOM,Sino,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Quạt cây Midea,1,ROOM,Midea,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,"Bàn gỗ 0,5 m x 1,2 m",38,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Ghế inox chân quỳ lưới đen,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Bàn giảng viên,1,ROOM,,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,TV TCL 4K,1,ROOM,TCL,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.
+EAUT105,Bộ phát Wi-Fi Grandstream,1,ROOM,Grandstream,,,,MOCK,TEMPLATE_UNVERIFIED,MOCK | Cấu hình mẫu theo ảnh + TV TCL; số lượng và tình trạng chưa kiểm kê tại phòng. Công suất và nhánh đo chưa xác định.

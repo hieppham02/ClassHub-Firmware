@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "OV7670: Build (1 job)",
+            "type": "process",
+            "command": "D:/.platformio/penv/Scripts/platformio.exe",
+            "args": ["run", "-e", "esp32-s3-devkitc-1", "-j", "1"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "OV7670: Upload COM3 (1 job)",
+            "type": "process",
+            "command": "D:/.platformio/penv/Scripts/platformio.exe",
+            "args": ["run", "-e", "esp32-s3-devkitc-1", "-j", "1", "--target", "upload", "--upload-port", "COM3"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

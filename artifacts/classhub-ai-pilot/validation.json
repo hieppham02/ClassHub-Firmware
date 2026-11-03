@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "samples": 60390,
+  "events": 270,
+  "episodes": 9,
+  "feature_windows": 6048,
+  "labeled_windows": 47,
+  "checks": [
+    "UTC/local conversion",
+    "exact sequence and missing intervals",
+    "nonnegative current",
+    "command lifecycle",
+    "after-return occupancy exclusion",
+    "separate feature and label exports"
+  ]
+}

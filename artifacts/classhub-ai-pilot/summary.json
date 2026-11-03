@@ -1,0 +1,20 @@
+{
+  "batch_id": "89cecf91-dd4d-5e19-903d-fe085a9b0848",
+  "start_local": "2026-09-24T00:00:00+07:00",
+  "end_local_exclusive": "2026-10-01T00:00:00+07:00",
+  "rooms": [
+    "DTD201",
+    "EAUT101",
+    "EAUT105"
+  ],
+  "source_sessions": 33,
+  "expected_samples": 60480,
+  "missing_samples": 90,
+  "inserted_samples": 60390,
+  "cabinet_events": 270,
+  "contexts": 36,
+  "anomalies": 9,
+  "data_source": "MOCK",
+  "local_checks": "PASS",
+  "source_sessions_sha256": "7ade65c4a7e96029c990f5c1eaf9a458dd4309d8678a3491c08cba971b848ccf"
+}
